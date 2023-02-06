@@ -1,17 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore/lite';
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAdmZlASJwTso_ruRZmWs0vm8Xlkmrvxhk",
-  authDomain: "jw-corp-website.firebaseapp.com",
-  databaseURL: "https://jw-corp-website-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "jw-corp-website",
-  storageBucket: "jw-corp-website.appspot.com",
-  messagingSenderId: "984520556511",
-  appId: "1:984520556511:web:ba0c02fac98b8731a44e6a"
+  apiKey: "AIzaSyBNrjVhLIjDdLPROuZjGrequXl5tkHkVSM",
+  authDomain: "jw-corp.firebaseapp.com",
+  projectId: "jw-corp",
+  storageBucket: "jw-corp.appspot.com",
+  messagingSenderId: "380697948374",
+  appId: "1:380697948374:web:1fe72b761d6271ccc89977",
+  measurementId: "G-G8236XZD82"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const analytics = getAnalytics(app);
 export {db};
