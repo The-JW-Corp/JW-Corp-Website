@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+src/firebaseConfig.js
 # testing
 /coverage
 
@@ -21,6 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src/configDb.js
+
 
 src/firebaseConfig.js
