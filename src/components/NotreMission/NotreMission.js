@@ -155,19 +155,20 @@ const NotreMission = ({ langageState }) => {
             className="hashlink-notre-mission notreMission-service"
             to={"/Services#recherche-developpement"}
           >
-            <h3>R&D</h3>
+            <h3>Design UI/UX & Illustrations</h3>
             <p>
               {langageState ? (
                 <>
-                  Nous étudions les différents cas d'usage lié aux nouvelles
-                  technologies expérimentales autour de la Blockchain (Lightning
-                  Network, ETH 2.0, SBTs...).
+                  Nous proposons une gamme complète de services de design pour
+                  vous aider à donner vie à votre vision créative. Nous nous
+                  spécialisons dans l'illustration, la recherche UX/UI et la
+                  création de design system.
                 </>
               ) : (
                 <>
-                  We study the different use cases related to the new
-                  technologies experimental technologies around the Blockchain
-                  (Lightning Network, ETH 2.0, SBTs...).
+                  We offer a complete range of design services to help bring
+                  your creative vision to life. We specialize in illustration,
+                  UX/UI research and design system creation.
                 </>
               )}
             </p>

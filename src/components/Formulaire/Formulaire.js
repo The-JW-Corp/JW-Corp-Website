@@ -18,8 +18,9 @@ function Formulaire({ langageState }) {
     },
   });
 
-  const timerFormulaireMessage = () => {
+  const timerFormulaireMessage = (e) => {
     setIsFormulaireSent(true);
+    
     setTimeout(() => {
       setIsFormulaireSent(false);
     }, 6000);
@@ -27,6 +28,7 @@ function Formulaire({ langageState }) {
 
   var collectionUser = collection(db, "JW Corp Beta Live");
   function onSubmit(data) {
+    
     console.log(data);
     addDoc(collectionUser, {
       email: `${data.email}`,
