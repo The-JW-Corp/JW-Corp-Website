@@ -87,7 +87,7 @@ const ContentServicesPage = ({ langageState }) => {
           </>
         ) : (
           <>
-            <ContentService
+            <ContentService id="smartcontract-dev"
               h4={"- Implementation"}
               p={
                 "We develop the digital infrastructure, install the necessary hardware in case the project needs a permanently synchronized node, train the relevant employees on the principles of blockchain, the use of their work tools, treasury management, taxation and securing cryptocurrencies and their custody."
@@ -153,7 +153,7 @@ const ContentServicesPage = ({ langageState }) => {
           .
         </p>
         <div className="content-services-h2-container content-services-h2-3-container">
-          <h2>
+          <h2 id="smart-contract-audit">
             {langageState ? (
               <>Audit de smart contact</>
             ) : (
