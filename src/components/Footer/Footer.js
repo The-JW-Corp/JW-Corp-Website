@@ -29,7 +29,7 @@ const Footer = ({langageState}) => {
             92400 Courbevoie, France <br />
           </p>
           <span>
-            © 2022 <a href="/#">JW Corp</a>. All rights reserved
+            © 2022 <a href="/MentionsLegales">JW Corp</a>. All rights reserved
           </span>
         </div>
       </div>

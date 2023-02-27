@@ -4,11 +4,11 @@ import Services from './page/Services/Services';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
+import MentionsLegales from './components/MentionsLegales/MentionsLegales';
 function App() {
   const [langageState, setLangageState] = useState(true);
   const handlingLangage = () => {
     setLangageState(!langageState);
-    console.log(langageState);
   };
   return (
     <BrowserRouter>
@@ -16,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home handlingLangage={handlingLangage} langageState={langageState} />}/>
         <Route path='/Services' element={<Services langageState={langageState} />} />
+        <Route path="/MentionsLegales" element={<MentionsLegales langageState={{langageState}}/>}/>
       </Routes>
       
     </BrowserRouter>
