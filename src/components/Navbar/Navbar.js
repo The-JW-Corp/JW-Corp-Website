@@ -20,7 +20,7 @@ function Navbar({ handlingLangage, langageState }) {
           </Link>
         </div>
         <div className="switch-langage-container">
-          <div>FR/EN  </div>
+          <div>EN/FR  </div>
           <div>
             <label className="switch">
               <input type="checkbox" onChange={handlingLangage} />
