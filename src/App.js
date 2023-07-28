@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import MentionsLegales from './components/MentionsLegales/MentionsLegales';
 function App() {
-  const [langageState, setLangageState] = useState(true);
+  const [langageState, setLangageState] = useState(false);
   const handlingLangage = () => {
     setLangageState(!langageState);
   };
