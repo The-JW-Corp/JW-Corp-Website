@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 100px;
+    /* padding-top: 100px; */
     padding-bottom: 30px;
 }
 .google-maps-container > span {
@@ -23,6 +23,7 @@
     width: 80% !important;
     height: 400px !important;
 }
+
 @media (min-width: 375px) {
     .google-maps-container > span{
         width: 262px;
@@ -36,6 +37,11 @@
 @media (min-width: 1080px) {
     .google-maps-container > span{
         width: 648px;
+    }
+}
+@media (min-width: 1270px) {
+    .google-maps-container {
+        padding-top: 100px;
     }
 }
 @media (min-width: 1440px) {

@@ -107,7 +107,7 @@ function Formulaire({ langageState }) {
                   )}
                 </span>
               )}
-              {errors.email?.type == "pattern" && (
+              {errors.email?.type === "pattern" && (
                 <span className="error-message">{errors.email.message}</span>
               )}
             </label>
@@ -159,12 +159,12 @@ function Formulaire({ langageState }) {
                   </>
                 )}
 
-                {errors.message?.type == "maxLength" && (
+                {errors.message?.type === "maxLength" && (
                   <span className="error-message">
                     {errors.message.message}
                   </span>
                 )}
-                {errors.message?.type == "minLength" && (
+                {errors.message?.type === "minLength" && (
                   <span className="error-message">
                     {errors.message.message}
                   </span>

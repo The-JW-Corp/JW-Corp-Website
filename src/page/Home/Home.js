@@ -11,15 +11,17 @@ import Google from "../../components/Googlemaps/Google";
 import Footer from "../../components/Footer/Footer";
 import AnimationsComponent from "../../components/AnimationsComponent/AnimationsComponent";
 import Formulaire from "../../components/Formulaire/Formulaire";
+import Calendly from "../../components/Calendly/Calendly";
 
-function Home({handlingLangage, langageState}) {
+function Home({langageState}) {
   return (
     <>
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
       <NosValeurs langageState={langageState} />
-      <Formulaire langageState={langageState} />
+      {/* <Formulaire langageState={langageState} /> */}
+      <Calendly/>
       <Google langageState={langageState} />
       <Footer langageState={langageState} />
       <AnimationsComponent langageState={langageState} />

@@ -1,0 +1,11 @@
+.calendly-container {
+  max-width: 100%;
+  /* max-height: ; */
+  width: 100%;
+  padding-top: 40px;
+  /* height: ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
