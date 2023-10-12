@@ -24,7 +24,7 @@ const Cta = ({ langageState }) => {
         <div className="cta-wrap-button">
           <HashLink
             smooth
-            to={"/#form"}
+            to={"/#calendly-id"}
             className="cta-button"
             id="cta-contact-us"
           >
