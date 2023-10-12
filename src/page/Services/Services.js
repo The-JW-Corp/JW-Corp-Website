@@ -7,13 +7,15 @@ import LandingServices from '../../components/LandingServices/LandingServices';
 import ContentServicesPage from '../../components/ContentServicesPage/ContentServicesPage';
 import Google from '../../components/Googlemaps/Google';
 import Formulaire from '../../components/Formulaire/Formulaire';
+import Calendly from '../../components/Calendly/Calendly';
 const Services = ({langageState}) => {
   return (
     <>
       {/* <Navbar langageState={langageState}/> */}
       <LandingServices langageState={langageState}/>
       <ContentServicesPage langageState={langageState}/>
-      <Formulaire langageState={langageState}/>
+      {/* <Formulaire langageState={langageState}/> */}
+      <Calendly/>
       <Google langageState={langageState}/>
       <Footer langageState={langageState}/>
 
