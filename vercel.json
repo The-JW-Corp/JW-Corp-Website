@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/.well-known/nostr.json",
+        "destination": "/.well-known/nostr.json"
+      }
+    ]
+  }
+  

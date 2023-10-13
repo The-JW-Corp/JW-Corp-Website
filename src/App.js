@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import MentionsLegales from './components/MentionsLegales/MentionsLegales';
+import BitcoinPrice from './page/BitcoinPrice/BitcoinPrice';
 function App() {
   const [langageState, setLangageState] = useState(false);
   const handlingLangage = () => {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<Home handlingLangage={handlingLangage} langageState={langageState} />}/>
         <Route path='/Services' element={<Services langageState={langageState} />} />
         <Route path="/MentionsLegales" element={<MentionsLegales langageState={{langageState}}/>}/>
+        <Route path="/Bitcoin-price" element={<BitcoinPrice/>}/>
       </Routes>
       
     </BrowserRouter>
