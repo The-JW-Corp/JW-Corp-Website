@@ -16,7 +16,7 @@ function App() {
   }
   return (
     <BrowserRouter>
-      <Navbar handlingLangage={handlingLangage} langageState={langageState} />
+      <Navbar checkDomain={checkDomain} handlingLangage={handlingLangage} langageState={langageState} />
       {checkDomain() ? (
         <BitcoinPrice />
       ) : (

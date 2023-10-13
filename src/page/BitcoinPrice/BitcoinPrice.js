@@ -1,6 +1,6 @@
-import React, { useEffect, memo, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./BitcoinPrice.css";
-function BitcoinPrice() {
+function BitcoinPrice({bitcoinPriceJwCorpDomain}) {
   const container = useRef();
   useEffect(() => {
     const script = document.createElement("script");

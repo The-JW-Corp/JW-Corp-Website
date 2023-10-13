@@ -5,17 +5,16 @@ import jwblanc from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-function Navbar({ handlingLangage, langageState }) {
+function Navbar({ handlingLangage, langageState, checkDomain }) {
   const [isClick, setIsClick] = useState(false);
   const handleClick = () => {
     setIsClick(!isClick);
   };
-
   return (
     <>
       <section className="component-navbar">
         <div className="navbar-logo-container">
-          <Link to="/">
+          <Link to={checkDomain ? "https://jwcorp.io" : "/"}>
             <img src={jwblanc} alt="JW Corp logo blanc" />
           </Link>
         </div>
