@@ -14,6 +14,19 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
     <>
       <section className="component-navbar">
         <div className="navbar-logo-container">
+          {checkDomain ? (
+            <>
+              <a href="https://jwcorp.io">
+                <img src={jwblanc} alt="JW Corp logo blanc" />
+              </a>
+            </>
+          ) : (
+            <>
+              <Link to="/">
+                <img src={jwblanc} alt="JW Corp logo blanc" />
+              </Link>
+            </>
+          )}
           <Link to={checkDomain ? "https://jwcorp.io" : "/"}>
             <img src={jwblanc} alt="JW Corp logo blanc" />
           </Link>
