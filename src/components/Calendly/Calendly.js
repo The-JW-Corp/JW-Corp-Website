@@ -3,7 +3,7 @@ import "./Calendly.css";
 import { useCalendlyEventListener, InlineWidget } from "react-calendly";
 import { db } from "../../firebaseConfig";
 import { doc, addDoc, collection, updateDoc } from "firebase/firestore";
-function Calendly() {
+function Calendly({ urlEnd, docRefFromHomeState }) {
   const [calendlyHeight, setCalendlyHeight] = useState();
   const [calendlyWidth, setCalendlyWidth] = useState();
   const [userIpAddress, setUserIpAddress] = useState();
@@ -62,18 +62,32 @@ function Calendly() {
   }
 
   async function handleCalendlyViewed() {
-    try {
-      // await getIpAddress();  // Attendre que getIpAddress se termine
-      const viewedAt = new Date();
-      const calendlyViewedCollection = collection(db, "calendlyViewed");
-      const docRef = await addDoc(calendlyViewedCollection, {
-        date: viewedAt,
-        ip_address: userIpAddress,
-      });
-      console.log("Document written with ID: ", docRef.id);
-      setDocRefState(docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    if (docRefFromHomeState) {
+      try {
+        const viewedAt = new Date();
+        const docRef = doc(db, "calendlyViewed", docRefFromHomeState);
+        await updateDoc(docRef, {
+          date: viewedAt,
+          ip_address: userIpAddress,
+        });
+        console.log("Document updated with ID: ", docRefFromHomeState);
+      } catch (e) {
+        console.error("Error updating document: ", e);
+      }
+    } else {
+      try {
+        // await getIpAddress();  // Attendre que getIpAddress se termine
+        const viewedAt = new Date();
+        const calendlyViewedCollection = collection(db, "calendlyViewed");
+        const docRef = await addDoc(calendlyViewedCollection, {
+          date: viewedAt,
+          ip_address: userIpAddress,
+        });
+        console.log("Document written with ID: ", docRef.id);
+        setDocRefState(docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
     }
   }
 
