@@ -17,14 +17,31 @@ import Formulaire from "../../components/Formulaire/Formulaire";
 import Calendly from "../../components/Calendly/Calendly";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
+  const [userIpAddressFromLinkedin, setUserIpAddressFromLinkedin] = useState();
   let navigate = useNavigate();
   let urlEnd = window.location.href.split("/")[3];
+  async function getIpAddress() {
+    try {
+      const response = await fetch("https://api.ipify.org?format=json");
+      const data = await response.json();
+      setUserIpAddressFromLinkedin(data?.ip);
+      // console.log('IP address retrieved:', data.ip);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+  useEffect(() => {
+    getIpAddress();
+  }, []);
   useEffect(() => {
     async function handleUserFromLinkedin() {
       try {
+        const viewedAt = new Date();
         const calendlyViewedCollection = collection(db, "calendlyViewed");
         const docRef = await addDoc(calendlyViewedCollection, {
           from_linkedin: true,
+          ip_address_from_linkedin: userIpAddressFromLinkedin,
+          date_from_linkedin: viewedAt,
         });
         console.log("Document written with ID: ", docRef.id);
         setDocRefFromState(docRef.id);
@@ -32,12 +49,12 @@ function Home({ langageState }) {
         console.error("Error adding document: ", e);
       }
     }
-    if (urlEnd === "?utm_source=linkedin") {
+    if (urlEnd === "?utm_source=linkedin" && userIpAddressFromLinkedin) {
       console.log("vient de linkedin");
       handleUserFromLinkedin();
       navigate("/");
     }
-  }, []);
+  }, [userIpAddressFromLinkedin]);
   return (
     <>
       <LandingPage langageState={langageState} />
