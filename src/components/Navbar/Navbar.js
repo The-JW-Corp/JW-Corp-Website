@@ -27,9 +27,6 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
               </Link>
             </>
           )}
-          <Link to={checkDomain ? "https://jwcorp.io" : "/"}>
-            <img src={jwblanc} alt="JW Corp logo blanc" />
-          </Link>
         </div>
         <div className="switch-langage-container">
           <div>EN/FR  </div>
