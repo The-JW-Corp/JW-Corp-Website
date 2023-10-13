@@ -1,5 +1,15 @@
 {
-    "names": {
-      "ramiabdou_jw": "e759a0fb901a98b1df7dd6d95f01677c62460bb5d2b256188433d540e65e933e"
-    }
+  "names": {
+    "ramiabdou_jw": "e759a0fb901a98b1df7dd6d95f01677c62460bb5d2b256188433d540e65e933e"
+  },
+  "relays": {
+    "e759a0fb901a98b1df7dd6d95f01677c62460bb5d2b256188433d540e65e933e": [
+      "wss://relay.damus.io",
+      "wss://eden.nostr.land",
+      "wss://nostr.fmt.wiz.biz",
+      "wss://nostr.milou.lol",
+      "wss://relay.snort.social",
+      "wss://relay.nostr.info"
+    ]
   }
+}
