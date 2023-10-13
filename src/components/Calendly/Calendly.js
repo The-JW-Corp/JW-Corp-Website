@@ -2,17 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Calendly.css";
 import { useCalendlyEventListener, InlineWidget } from "react-calendly";
 import { db } from "../../firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
+import { doc, addDoc, collection, updateDoc } from "firebase/firestore";
 function Calendly() {
   const [calendlyHeight, setCalendlyHeight] = useState();
   const [calendlyWidth, setCalendlyWidth] = useState();
   const [userIpAddress, setUserIpAddress] = useState();
+  const [docRefState, setDocRefState] = useState();
   const calendlyRef = useRef(null);
   useCalendlyEventListener({
     onProfilePageViewed: () => console.log("onProfilePageViewed"),
-    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
+    onDateAndTimeSelected: () => handleDateTimeSelected(),
     // onEventTypeViewed: () => getIpAddress(),
-    onEventScheduled: (e) => console.log(e.data.payload),
+    onEventScheduled: (e) => handleEventSheduled(),
   });
   const handleResize = () => {
     // console.log(window.innerWidth);
@@ -70,8 +71,32 @@ function Calendly() {
         ip_address: userIpAddress,
       });
       console.log("Document written with ID: ", docRef.id);
+      setDocRefState(docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
+    }
+  }
+
+  async function handleDateTimeSelected() {
+    try {
+      const docRef = doc(db, "calendlyViewed", docRefState); // Obtenez une référence au document spécifique
+      await updateDoc(docRef, {
+        date_time_selected: true,
+      });
+      console.log("date_time_selected updated for document ID:", docRefState);
+    } catch (e) {
+      console.error("Error updating document: ", e);
+    }
+  }
+  async function handleEventSheduled() {
+    try {
+      const docRef = doc(db, "calendlyViewed", docRefState); // Obtenez une référence au document spécifique
+      await updateDoc(docRef, {
+        event_sheduled: true,
+      });
+      console.log("date_time_selected updated for document ID:", docRefState);
+    } catch (e) {
+      console.error("Error updating document: ", e);
     }
   }
   useEffect(() => {
