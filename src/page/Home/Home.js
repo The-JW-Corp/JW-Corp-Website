@@ -38,11 +38,21 @@ function Home({ langageState }) {
       try {
         const viewedAt = new Date();
         const calendlyViewedCollection = collection(db, "calendlyViewed");
-        const docRef = await addDoc(calendlyViewedCollection, {
-          from_linkedin: true,
-          ip_address_from_linkedin: userIpAddressFromLinkedin,
-          date_from_linkedin: viewedAt,
-        });
+        let docRef = "";
+        if (urlEnd === "?utm_source=linkedin") {
+          docRef = await addDoc(calendlyViewedCollection, {
+            from_linkedin: true,
+            ip_address_from_linkedin: userIpAddressFromLinkedin,
+            date_from_linkedin: viewedAt,
+          });
+        } else if (urlEnd === "?utm_source=codeur") {
+          docRef = await addDoc(calendlyViewedCollection, {
+            from_codeur: true,
+            ip_address_from_codeur: userIpAddressFromLinkedin,
+            date_from_codeur: viewedAt,
+          });
+        }
+
         console.log("Document written with ID: ", docRef.id);
         setDocRefFromState(docRef.id);
       } catch (e) {
@@ -51,7 +61,12 @@ function Home({ langageState }) {
     }
     if (urlEnd === "?utm_source=linkedin" && userIpAddressFromLinkedin) {
       console.log("vient de linkedin");
-      handleUserFromLinkedin();
+      handleUserFromLinkedin(urlEnd);
+      navigate("/");
+    }
+    if (urlEnd === "?utm_source=codeur" && userIpAddressFromLinkedin) {
+      console.log("vient de codeur.com");
+      handleUserFromLinkedin(urlEnd);
       navigate("/");
     }
   }, [userIpAddressFromLinkedin]);
