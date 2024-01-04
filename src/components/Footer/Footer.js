@@ -4,6 +4,7 @@ import logo from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 
 
 const Footer = ({langageState}) => {
+  const year = new Date().getFullYear();
   return (
     <div className="footer-component">
       <div className="footer-container-1">
@@ -29,7 +30,7 @@ const Footer = ({langageState}) => {
             92400 Courbevoie, France <br />
           </p>
           <span>
-            © 2022 <a href="/MentionsLegales">JW Corp</a>. All rights reserved
+            © {year} <a href="/MentionsLegales">JW Corp</a>. All rights reserved
           </span>
         </div>
       </div>
