@@ -1,40 +1,61 @@
 import React from "react";
 import "./Carousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+// import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { EffectCards } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
+// import "swiper/css/navigation";
+// import "swiper/css/autoplay";
 import "swiper/css/effect-cards";
 
 function Carousel() {
   return (
     <div className="carousel-container">
-      Our Projects
+      <div className="carousel-title">Our Projects</div>
+
       <div className="carousel-wrap">
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={1}
-          navigation={true}
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
           loop={true}
-          modules={[Pagination, Navigation]}
-          pagination={{ clickable: true }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          className="mySwiper"
         >
           <SwiperSlide onDoubleClick={() => console.log("double click")}>
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap">Slide 1</div>
+              <div className="carousel-slide-wrap">ZIZI</div>
             </div>
           </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          ...
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap"></div>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>
