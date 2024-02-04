@@ -15,6 +15,7 @@ import Footer from "../../components/Footer/Footer";
 import AnimationsComponent from "../../components/AnimationsComponent/AnimationsComponent";
 import Formulaire from "../../components/Formulaire/Formulaire";
 import Calendly from "../../components/Calendly/Calendly";
+import Carousel from "../../components/Carousel/Carousel.tsx";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
   const [userIpAddressFromLinkedin, setUserIpAddressFromLinkedin] = useState();
@@ -75,6 +76,7 @@ function Home({ langageState }) {
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
+      <Carousel />
       <NosValeurs langageState={langageState} />
       {/* <Formulaire langageState={langageState} /> */}
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
