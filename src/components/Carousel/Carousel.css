@@ -1,0 +1,140 @@
+.carousel-container {
+  /* background-color: red; */
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: visible;
+}
+.carousel-wrap {
+  overflow: visible;
+  display: flex;
+  width: 80vw;
+  margin-top: 40px;
+  position: relative;
+}
+.carousel-title {
+  margin: 40px;
+  font-size: 2.5em;
+  font-weight: 800;
+}
+.swiper-button-next {
+  /* right: -20px !important; */
+}
+.swiper-button-prev {
+  /* position: relative; */
+  /* left: 50%; */
+}
+.swiper-slide {
+  min-height: 50px;
+  /* background-color: aqua; */
+}
+.carousel-slide-container {
+  display: flex;
+  /* justify-content: center; */
+}
+.carousel-slide-wrap {
+  /* width: 90%; */
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: underline;
+}
+/* .swiper-slide-container:hover {
+opacity: 0.5;
+transition-duration:600ms ;
+
+} */
+.swiper-slide-container-hover {
+  /* width: 100vw !important; */
+
+  transition-duration: 600ms;
+  opacity: 0.5 !important;
+  /* animation-duration: 800ms; */
+}
+.carousel-slide-wrap-hover {
+  /* width: 90%; */
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: underline;
+  opacity: 0.2;
+}
+.swiper {
+  /* width: 60vw; */
+  /* height: 320px; */
+  /* height: calc(60vw * 1.77777); */
+  /* width: 50vw; */
+  /* height: 33.7501vh; */
+  height: 378px;
+  width: 672px;
+
+  /* Échelle basée sur la largeur de la fenêtre d'affichage */
+  transform-origin: left center; /* Ajuste l'origine du scaling */
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: black;
+  background-image: url("../../assets/republike.svg");
+  background-repeat: no-repeat;
+  filter: drop-shadow();
+  background-position: center;
+  /* background-size: 100%; */
+  background-size: contain;
+}
+
+.swiper-slide:nth-child(2n) {
+  background-image: url("../../assets/philippegonnet.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: black;
+  background-image: url("../../assets/sofan.webp");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
+.swiper-slide:nth-child(4n) {
+  background-color: black;
+  background-image: url("../../assets/lux.svg");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
+.swiper-slide:nth-child(5n) {
+  background-color: black;
+  background-image: url("../../assets/stone.JPG");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
