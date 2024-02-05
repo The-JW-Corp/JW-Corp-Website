@@ -1,9 +1,10 @@
 .carousel-container {
   /* background-color: red; */
-  height: 50vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   overflow: visible;
 }
@@ -11,11 +12,12 @@
   overflow: visible;
   display: flex;
   width: 80vw;
+  margin-top: 40px;
   position: relative;
 }
 .carousel-title {
   margin: 40px;
-  font-size: 25px;
+  font-size: 2.5em;
   font-weight: 800;
 }
 .swiper-button-next {
@@ -111,7 +113,25 @@ transition-duration:600ms ;
 
 .swiper-slide:nth-child(3n) {
   background-color: black;
-  background-image: url("../../assets/sofan.svg");
+  background-image: url("../../assets/sofan.webp");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
+.swiper-slide:nth-child(4n) {
+  background-color: black;
+  background-image: url("../../assets/lux.svg");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
+.swiper-slide:nth-child(5n) {
+  background-color: black;
+  background-image: url("../../assets/stone.JPG");
   /* background-size: 100%; */
   background-repeat: no-repeat;
   background-position: center;
