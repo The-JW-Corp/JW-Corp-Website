@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Carousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
@@ -9,6 +9,10 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 
 function Carousel() {
+  const [isMouseOnSwiper, setIsMouseOnSwiper] = useState(false);
+  useEffect(() => {
+    console.log(isMouseOnSwiper);
+  }, [isMouseOnSwiper]);
   return (
     <div className="carousel-container">
       <div className="carousel-title">Our Projects</div>
@@ -18,42 +22,27 @@ function Carousel() {
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
-          loop={true}
+          // loop={true}
           className="mySwiper"
         >
-          <SwiperSlide onDoubleClick={() => console.log("double click")}>
+          <SwiperSlide
+            onMouseEnter={() => setIsMouseOnSwiper(true)}
+            onMouseLeave={() => setIsMouseOnSwiper(false)}
+            onDoubleClick={() => console.log("double click")}
+            className="swiper-slide-container"
+          >
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap">ZIZI</div>
+              <div className="carousel-slide-wrap">Republike</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
+              <div className="carousel-slide-wrap">Philippe Gonet</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap"></div>
+              <div className="carousel-slide-wrap">Sofan</div>
             </div>
           </SwiperSlide>
         </Swiper>

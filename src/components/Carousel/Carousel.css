@@ -7,13 +7,13 @@
   flex-direction: column;
   overflow: visible;
 }
-.carousel-wrap{
+.carousel-wrap {
   overflow: visible;
   display: flex;
   width: 80vw;
-
+  position: relative;
 }
-.carousel-title{
+.carousel-title {
   margin: 40px;
   font-size: 25px;
   font-weight: 800;
@@ -29,17 +29,56 @@
   min-height: 50px;
   /* background-color: aqua; */
 }
-.carousel-slide-container{
-display: flex;
-justify-content: center;
+.carousel-slide-container {
+  display: flex;
+  /* justify-content: center; */
 }
-.carousel-slide-wrap{
-  width: 80%;
-  /* background-color:yellow; */
+.carousel-slide-wrap {
+  /* width: 90%; */
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: underline;
+}
+/* .swiper-slide-container:hover {
+opacity: 0.5;
+transition-duration:600ms ;
+
+} */
+.swiper-slide-container-hover {
+  /* width: 100vw !important; */
+
+  transition-duration: 600ms;
+  opacity: 0.5 !important;
+  /* animation-duration: 800ms; */
+}
+.carousel-slide-wrap-hover {
+  /* width: 90%; */
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: white;
+  background-color: #2b2b2b;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: underline;
+  opacity: 0.2;
 }
 .swiper {
-  width: 60vw;
-  height: 320px;
+  /* width: 60vw; */
+  /* height: 320px; */
+  /* height: calc(60vw * 1.77777); */
+  /* width: 50vw; */
+  /* height: 33.7501vh; */
+  height: 378px;
+  width: 672px;
+
+  /* Échelle basée sur la largeur de la fenêtre d'affichage */
+  transform-origin: left center; /* Ajuste l'origine du scaling */
 }
 
 .swiper-slide {
@@ -53,44 +92,29 @@ justify-content: center;
 }
 
 .swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+  background-color: black;
   background-image: url("../../assets/republike.svg");
+  background-repeat: no-repeat;
+  filter: drop-shadow();
+  background-position: center;
+  /* background-size: 100%; */
+  background-size: contain;
 }
 
 .swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
   background-image: url("../../assets/philippegonnet.svg");
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-.swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
+  background-color: black;
+  background-image: url("../../assets/sofan.svg");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
 }
