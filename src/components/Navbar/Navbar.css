@@ -10,7 +10,7 @@
   text-transform: uppercase;
   color: #fff;
   background-color: blueviolet;
-  z-index: 1;
+  z-index: 5;
 }
 .navbar-logo-container {
   display: flex;
