@@ -3,19 +3,16 @@ import "./Home.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebaseConfig";
-import { doc, addDoc, collection, updateDoc } from "firebase/firestore";
-// import { useLocation } from "react-router-dom";
-// import { HashLink } from "react-router-hash-link";
-import Navbar from "../../components/Navbar/Navbar";
+import { addDoc, collection } from "firebase/firestore";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import NotreMission from "../../components/NotreMission/NotreMission";
 import NosValeurs from "../../components/NosValeurs/NosValeurs";
 import Google from "../../components/Googlemaps/Google";
 import Footer from "../../components/Footer/Footer";
 import AnimationsComponent from "../../components/AnimationsComponent/AnimationsComponent";
-import Formulaire from "../../components/Formulaire/Formulaire";
 import Calendly from "../../components/Calendly/Calendly";
 import Carousel from "../../components/Carousel/Carousel.tsx";
+import TheyTrustedUs from "../../components/TheyTrustedUs/TheyTrustedUs.tsx";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
   const [userIpAddressFromLinkedin, setUserIpAddressFromLinkedin] = useState();
@@ -70,15 +67,15 @@ function Home({ langageState }) {
       handleUserFromLinkedin(urlEnd);
       navigate("/");
     }
-  }, [userIpAddressFromLinkedin]);
+  }, [userIpAddressFromLinkedin, urlEnd, navigate]);
   return (
     <>
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
       <Carousel />
+      <TheyTrustedUs/>
       <NosValeurs langageState={langageState} />
-      {/* <Formulaire langageState={langageState} /> */}
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
       <Google langageState={langageState} />
       <Footer langageState={langageState} />
