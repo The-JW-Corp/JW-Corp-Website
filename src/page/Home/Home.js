@@ -11,7 +11,7 @@ import Google from "../../components/Googlemaps/Google";
 import Footer from "../../components/Footer/Footer";
 import AnimationsComponent from "../../components/AnimationsComponent/AnimationsComponent";
 import Calendly from "../../components/Calendly/Calendly";
-// import Carousel from "../../components/Carousel/Carousel.tsx";
+import Carousel from "../../components/Carousel/Carousel.tsx";
 import TheyTrustedUs from "../../components/TheyTrustedUs/TheyTrustedUs.tsx";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
@@ -73,7 +73,7 @@ function Home({ langageState }) {
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
-      {/* <Carousel /> */}
+      <Carousel />
       <TheyTrustedUs/>
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
