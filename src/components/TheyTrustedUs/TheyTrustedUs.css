@@ -32,7 +32,7 @@
 .they-trusted-us-logo-container {
   /* display: inline-flex;  */
   position: absolute;
-  top: 5px;
+  top: 25px;
   display: flex;
   justify-content: center;
   animation: slide 10s linear infinite;

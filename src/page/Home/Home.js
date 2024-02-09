@@ -73,7 +73,7 @@ function Home({ langageState }) {
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
-      <Carousel />
+      <Carousel langageState={langageState}/>
       <TheyTrustedUs/>
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />

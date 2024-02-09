@@ -8,14 +8,16 @@ import "swiper/css";
 // import "swiper/css/autoplay";
 import "swiper/css/effect-cards";
 
-function Carousel() {
+function Carousel({ langageState }) {
   const [isMouseOnSwiper, setIsMouseOnSwiper] = useState(false);
   useEffect(() => {
     console.log(isMouseOnSwiper);
   }, [isMouseOnSwiper]);
   return (
     <div className="carousel-container">
-      <div className="carousel-title">Our Projects</div>
+      <div className="carousel-title">
+        {langageState ? "Nos Projets" : "Our Project"}
+      </div>
 
       <div className="carousel-wrap">
         <Swiper
