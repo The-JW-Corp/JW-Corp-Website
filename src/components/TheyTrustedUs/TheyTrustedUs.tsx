@@ -74,7 +74,6 @@ function TheyTrustedUs() {
             alt=""
           />
         </div>
-        {/* Duplication du contenu pour le défilement continu */}
         <div>
           <img
             id="betterscan-logo"

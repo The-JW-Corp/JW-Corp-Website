@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
-import Navbar from "../../components/Navbar/Navbar";
 import LandingPage from "../../components/LandingPage/LandingPage";
 import NotreMission from "../../components/NotreMission/NotreMission";
 import NosValeurs from "../../components/NosValeurs/NosValeurs";
@@ -12,7 +11,7 @@ import Google from "../../components/Googlemaps/Google";
 import Footer from "../../components/Footer/Footer";
 import AnimationsComponent from "../../components/AnimationsComponent/AnimationsComponent";
 import Calendly from "../../components/Calendly/Calendly";
-import Carousel from "../../components/Carousel/Carousel.tsx";
+// import Carousel from "../../components/Carousel/Carousel.tsx";
 import TheyTrustedUs from "../../components/TheyTrustedUs/TheyTrustedUs.tsx";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
@@ -68,13 +67,13 @@ function Home({ langageState }) {
       handleUserFromLinkedin(urlEnd);
       navigate("/");
     }
-  }, [userIpAddressFromLinkedin]);
+  }, [userIpAddressFromLinkedin, urlEnd, navigate]);
   return (
     <>
       <LandingPage langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
-      <Carousel />
+      {/* <Carousel /> */}
       <TheyTrustedUs/>
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
