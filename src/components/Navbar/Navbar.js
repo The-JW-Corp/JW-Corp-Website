@@ -66,11 +66,11 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
             </label>
           </div> */}
           <div className="burger">
-            <a onClick={handleClick}>
+            <div className="" onClick={handleClick}>
               <span className={isClick ? "span span1-active" : "span"}></span>
               <span className={isClick ? "span span2-active" : "span"}></span>
               <span className={isClick ? "span span3-active" : "span"}></span>
-            </a>
+            </div>
           </div>
         </div>
       </section>

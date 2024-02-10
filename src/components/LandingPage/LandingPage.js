@@ -1,9 +1,9 @@
 import React from "react";
 import "./LandingPage.css";
 import { TypeAnimation } from "react-type-animation";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { useState } from "react";
+// import { useState } from "react";
 
 function LandingPage({ langageState }) {
   return (

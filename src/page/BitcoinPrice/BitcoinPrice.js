@@ -58,8 +58,9 @@ function BitcoinPrice({bitcoinPriceJwCorpDomain}) {
             <div className="tradingview-widget-copyright">
               <a
                 href="https://www.tradingview.com/"
-                rel="noopener nofollow"
+                // rel="noopener nofollow"
                 target="_blank"
+                rel="noreferrer"
               >
                 {/* <span className="blue-text">
                   Track all markets on TradingView

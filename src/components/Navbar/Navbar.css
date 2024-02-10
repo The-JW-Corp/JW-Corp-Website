@@ -97,7 +97,7 @@
   width: 15%;
   height: 30px;
 }
-.burger > a {
+.burger > div {
   width: 50px;
   height: 20px;
   cursor: pointer;

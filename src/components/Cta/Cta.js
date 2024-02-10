@@ -1,6 +1,6 @@
 import React from "react";
 import "./Cta.css";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Cta = ({ langageState }) => {

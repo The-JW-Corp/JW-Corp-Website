@@ -1,11 +1,10 @@
 import React from "react";
 import "./Animations-Component.css";
-import { delay, motion, useScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-// import { ScrollSmoother } from "gsap/ScrollSmoother";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 function AnimationsComponent() {
   const { scrollYProgress } = useScroll();
@@ -38,8 +37,6 @@ function AnimationsComponent() {
 
   useEffect(() => {
     slideInTop("#cta-form-text");
-  }, []);
-  useEffect(() => {
     slideInTop("#form");
   }, []);
 

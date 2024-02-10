@@ -34,21 +34,21 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
       setCalendlyWidth("80%");
     }
   };
-  function checkIfInView() {
-    const rect = calendlyRef.current.getBoundingClientRect();
-    // console.log('Checking if Calendly is in view...')
-    if (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    ) {
-      getIpAddress();
-      // handleCalendlyViewed();
-      window.removeEventListener("scroll", checkIfInView); // Supprimez l'écouteur d'événements une fois que le calendly est en vue
-    }
-  }
+  // function checkIfInView() {
+  //   const rect = calendlyRef.current.getBoundingClientRect();
+  //   // console.log('Checking if Calendly is in view...')
+  //   if (
+  //     rect.top >= 0 &&
+  //     rect.left >= 0 &&
+  //     rect.bottom <=
+  //       (window.innerHeight || document.documentElement.clientHeight) &&
+  //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  //   ) {
+  //     getIpAddress();
+  //     // handleCalendlyViewed();
+  //     window.removeEventListener("scroll", checkIfInView); // Supprimez l'écouteur d'événements une fois que le calendly est en vue
+  //   }
+  // }
 
   async function getIpAddress() {
     try {
@@ -61,35 +61,35 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
     }
   }
 
-  async function handleCalendlyViewed() {
-    if (docRefFromHomeState) {
-      try {
-        const viewedAt = new Date();
-        const docRef = doc(db, "calendlyViewed", docRefFromHomeState);
-        await updateDoc(docRef, {
-          date: viewedAt,
-          ip_address: userIpAddress,
-        });
-        console.log("Document updated with ID: ", docRefFromHomeState);
-      } catch (e) {
-        console.error("Error updating document: ", e);
-      }
-    } else {
-      try {
-        // await getIpAddress();  // Attendre que getIpAddress se termine
-        const viewedAt = new Date();
-        const calendlyViewedCollection = collection(db, "calendlyViewed");
-        const docRef = await addDoc(calendlyViewedCollection, {
-          date: viewedAt,
-          ip_address: userIpAddress,
-        });
-        console.log("Document written with ID: ", docRef.id);
-        setDocRefState(docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
-    }
-  }
+  // async function handleCalendlyViewed() {
+  //   if (docRefFromHomeState) {
+  //     try {
+  //       const viewedAt = new Date();
+  //       const docRef = doc(db, "calendlyViewed", docRefFromHomeState);
+  //       await updateDoc(docRef, {
+  //         date: viewedAt,
+  //         ip_address: userIpAddress,
+  //       });
+  //       console.log("Document updated with ID: ", docRefFromHomeState);
+  //     } catch (e) {
+  //       console.error("Error updating document: ", e);
+  //     }
+  //   } else {
+  //     try {
+  //       // await getIpAddress();  // Attendre que getIpAddress se termine
+  //       const viewedAt = new Date();
+  //       const calendlyViewedCollection = collection(db, "calendlyViewed");
+  //       const docRef = await addDoc(calendlyViewedCollection, {
+  //         date: viewedAt,
+  //         ip_address: userIpAddress,
+  //       });
+  //       console.log("Document written with ID: ", docRef.id);
+  //       setDocRefState(docRef.id);
+  //     } catch (e) {
+  //       console.error("Error adding document: ", e);
+  //     }
+  //   }
+  // }
 
   async function handleDateTimeSelected() {
     try {
@@ -114,14 +114,56 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
     }
   }
   useEffect(() => {
+    async function handleCalendlyViewed() {
+      if (docRefFromHomeState) {
+        try {
+          const viewedAt = new Date();
+          const docRef = doc(db, "calendlyViewed", docRefFromHomeState);
+          await updateDoc(docRef, {
+            date: viewedAt,
+            ip_address: userIpAddress,
+          });
+          console.log("Document updated with ID: ", docRefFromHomeState);
+        } catch (e) {
+          console.error("Error updating document: ", e);
+        }
+      } else {
+        try {
+          // await getIpAddress();  // Attendre que getIpAddress se termine
+          const viewedAt = new Date();
+          const calendlyViewedCollection = collection(db, "calendlyViewed");
+          const docRef = await addDoc(calendlyViewedCollection, {
+            date: viewedAt,
+            ip_address: userIpAddress,
+          });
+          console.log("Document written with ID: ", docRef.id);
+          setDocRefState(docRef.id);
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+      }
+    }
     handleCalendlyViewed();
-  }, [userIpAddress]);
+  }, [userIpAddress, docRefFromHomeState]);
 
   useEffect(() => {
     handleResize();
+    function checkIfInView() {
+      const rect = calendlyRef.current.getBoundingClientRect();
+      // console.log('Checking if Calendly is in view...')
+      if (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      ) {
+        getIpAddress();
+        // handleCalendlyViewed();
+        window.removeEventListener("scroll", checkIfInView); // Supprimez l'écouteur d'événements une fois que le calendly est en vue
+      }
+    }
     window.addEventListener("resize", handleResize);
-  }, []);
-  useEffect(() => {
     window.addEventListener("scroll", checkIfInView);
     return () => {
       window.removeEventListener("scroll", checkIfInView); // Nettoyez l'écouteur d'événements lorsque le composant est démonté

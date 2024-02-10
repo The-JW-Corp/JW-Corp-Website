@@ -1,12 +1,12 @@
 import React from 'react'
 import './Services.css';
-import { Link } from 'react-router-dom';
-import Navbar from '../../components/Navbar/Navbar';
+// import { Link } from 'react-router-dom';
+// import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import LandingServices from '../../components/LandingServices/LandingServices';
 import ContentServicesPage from '../../components/ContentServicesPage/ContentServicesPage';
 import Google from '../../components/Googlemaps/Google';
-import Formulaire from '../../components/Formulaire/Formulaire';
+// import Formulaire from '../../components/Formulaire/Formulaire';
 import Calendly from '../../components/Calendly/Calendly';
 const Services = ({langageState}) => {
   return (
