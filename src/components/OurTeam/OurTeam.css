@@ -139,20 +139,20 @@
 }
 
 .team-members-profile-pic-and-name-and-job {
-    /* width: 120px;
+  /* width: 120px;
     height: 120px;
     border-radius: 120px;
     border: 1px solid var(--orange-gradient, #ffd94a); */
-    /* background: url(), lightgray 50% / cover no-repeat; */
-    background: cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    /* background-color: red; */
-    max-width: 164px;
-    /* background-color: red; */
-    margin-top: 20px;
+  /* background: url(), lightgray 50% / cover no-repeat; */
+  background: cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* background-color: red; */
+  max-width: 164px;
+  /* background-color: red; */
+  margin-top: 20px;
 }
 .team-member-profile-pic-line-up-connection {
   height: 40px;
@@ -235,6 +235,10 @@
   width: fit-content;
   display: flex;
   margin-top: 11px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
 }
 .team-members-developers-member-container {
   display: flex;
@@ -242,16 +246,19 @@
 }
 .team-members-profile-pic-and-name-and-job-second {
   /* margin-top: 40px; */
-  width: 164px ;
+  width: 164px;
   margin-left: 25px;
   margin-top: 20px;
+}
+#victor-beule {
+  width: 145px;
 }
 .team-member-profile-pic-line-side-connection {
   width: 60px;
   height: 2px;
   background: blueviolet;
-/* visibility: hidden; */
-display: none;
+  /* visibility: hidden; */
+  display: none;
 }
 .team-members-profile-pic-and-name-and-job,
 .team-members-profile-pic-and-name-and-job-second {
@@ -329,8 +336,8 @@ display: none;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.team-members-developers-job span{
-    display: block;
+.team-members-developers-job span {
+  display: block;
 }
 .team-members-developers-description {
   color: #1a1e2c;
@@ -340,7 +347,7 @@ display: none;
   font-weight: 500;
   line-height: 24px; /* 150% */
   margin-left: 50px;
-  margin-top: 76px;
+  /* margin-top: 76px; */
 }
 @media (max-width: 1130px) {
   .team-title,
@@ -353,8 +360,11 @@ display: none;
     font-size: 14px;
   }
   .team-members-profile-pic-and-name-and-job-second {
-    margin-top: 50px;
-    margin-left: -5px;
+    /* margin-top: 50px; */
+    /* margin-left: -5px; */
+  }
+  #victor-beule {
+    width: 105px;
   }
   .team-members-founder-profile-pic-container,
   .team-members-designer-profile-pic-container,
@@ -405,9 +415,17 @@ display: none;
   .team-members-developers-name {
     min-height: 32px;
   }
-  .team-members-profile-pic-and-name-and-job-second {
+  /* .team-members-profile-pic-and-name-and-job-second {
     margin-top: 32px;
     margin-left: -10px;
+  } */
+  .team-members-profile-pic-and-name-and-job,
+  .team-members-profile-pic-and-name-and-job-second {
+    /* width: fit-content; */
+    width: 95px;
+  }
+  .team-member-developers-job-container span {
+    font-size: 9px;
   }
   .team-members-founder-profile-pic-container,
   .team-members-designer-profile-pic-container,
@@ -439,10 +457,10 @@ display: none;
     font-size: 12px;
     line-height: 18px;
   }
-  .team-members-designer-description,
+  /* .team-members-designer-description,
   .team-members-developers-description {
     margin-top: 56px;
-  }
+  } */
 }
 /*  */
 @media (max-width: 430px) {
@@ -512,7 +530,7 @@ display: none;
   }
   .team-members-designer-description,
   .team-members-developers-description {
-    margin-top: 46px;
+    /* margin-top: 46px; */
     margin-left: 25px;
   }
 }

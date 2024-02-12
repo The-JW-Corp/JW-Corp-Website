@@ -178,10 +178,12 @@ function OurTeam({ langageState }) {
               </div>
             </div>
             <div className="team-members-developers-member-container">
-              <div className="team-member-profile-pic-line-side-connection"></div>
+              {/* <div className="team-member-profile-pic-line-side-connection"></div> */}
               <div
                 className="team-members-profile-pic-and-name-and-job-second"
-                style={{ marginLeft: "0px" }}
+                id="victor-beule"
+                // style={{ marginLeft: "0px" }}
+                // style={{ width:"100px" }}
               >
                 <div className="team-members-developers-profile-pic-container">
                   <img
