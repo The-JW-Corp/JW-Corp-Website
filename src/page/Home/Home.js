@@ -13,6 +13,7 @@ import AnimationsComponent from "../../components/AnimationsComponent/Animations
 import Calendly from "../../components/Calendly/Calendly";
 import Carousel from "../../components/Carousel/Carousel.tsx";
 import TheyTrustedUs from "../../components/TheyTrustedUs/TheyTrustedUs.tsx";
+import OurTeam from "../../components/OurTeam/OurTeam.tsx";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
   const [userIpAddressFromLinkedin, setUserIpAddressFromLinkedin] = useState();
@@ -75,6 +76,7 @@ function Home({ langageState }) {
       <Cta langageState={langageState} />
       <Carousel langageState={langageState}/>
       <TheyTrustedUs/>
+      <OurTeam/>
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
       <Google langageState={langageState} />
