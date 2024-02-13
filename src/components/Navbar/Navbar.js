@@ -27,7 +27,15 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
             </>
           )}
         </div>
+
         <div className="navbar-switch-langage-container">
+          <HashLink smooth className="navbar-contact-us" to={"/#calendly-id"}>
+            <div>CONTACT US
+
+              <div className="navbar-contact-us-notif">1</div>
+            </div>
+          </HashLink>
+          <div></div>
           <div>EN/FR  </div>
           <div>
             <label className="navbar-switch">
@@ -36,6 +44,7 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
             </label>
           </div>
         </div>
+
         <div className="navbar-container">
           <div className="nav-container">
             <nav className={isClick ? "navbar-active" : "navbar"}>
