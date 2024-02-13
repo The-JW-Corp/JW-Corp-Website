@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import "../../assets/fonts/Lato-Black.ttf";
 import jwblanc from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -28,12 +27,12 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
             </>
           )}
         </div>
-        <div className="switch-langage-container">
+        <div className="navbar-switch-langage-container">
           <div>EN/FR  </div>
           <div>
-            <label className="switch">
+            <label className="navbar-switch">
               <input type="checkbox" onChange={handlingLangage} />
-              <span className="slider round"></span>
+              <span className="navbar-slider navbar-round"></span>
             </label>
           </div>
         </div>

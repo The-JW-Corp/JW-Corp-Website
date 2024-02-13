@@ -3,6 +3,7 @@
   z-index: 1030;
   display: flex;
   width: 100%;
+  /* width: 70vw; */
   height: 6em;
   font-size: 14px;
   font-weight: 600;
@@ -138,7 +139,7 @@
 
 /* ---------------------------------------------------------------------------------------------- */
 
-.switch-langage-container {
+.navbar-switch-langage-container {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
@@ -149,7 +150,7 @@
   top: 6%;
   position: fixed;
 }
-.switch-langage-container div {
+.navbar-switch-langage-container div {
   height: 100%;
   width: 100%;
   /* background-color: blue; */
@@ -158,20 +159,20 @@
   align-items: center;
   font-size: 0.7em;
 }
-.switch {
+.navbar-switch {
   position: relative;
   display: inline-block;
   width: 24px;
   height: 14px;
 }
 
-.switch input {
+.navbar-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.slider {
+.navbar-slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -183,7 +184,7 @@
   transition: 0.4s;
 }
 
-.slider:before {
+.navbar-slider:before {
   position: absolute;
   content: "";
   height: 11px;
@@ -195,26 +196,26 @@
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked + .navbar-slider {
   background-color: rgb(61, 11, 108);
 }
 
-input:focus + .slider {
+input:focus + .navbar-slider {
   box-shadow: 0 0 1px rgb(61, 11, 108);
 }
 
-input:checked + .slider:before {
+input:checked + .navbar-slider:before {
   -webkit-transform: translateX(9px);
   -ms-transform: translateX(9px);
   transform: translateX(9px);
 }
 
 /* Rounded sliders */
-.slider.round {
+.navbar-slider.navbar-round {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.navbar-slider.navbar-round:before {
   border-radius: 50%;
 }
 /* ---------------------------------------------------------------------------------------------- */
@@ -227,18 +228,18 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
   }
-  .switch-langage-container {
+  .navbar-switch-langage-container {
     right: 8%;
   }
 }
 @media (min-width: 400px) {
-  .switch-langage-container{
+  .navbar-switch-langage-container{
     /* top:5%;
     right: 4% ; */
   }
 }
 @media (min-width: 500px) {
-  .switch-langage-container{
+  .navbar-switch-langage-container{
     right: 10%;
     top: 4%;
     padding: 2px;
@@ -250,7 +251,7 @@ input:checked + .slider:before {
     display: flex;
     justify-content: center;
   }
-  .switch-langage-container {
+  .navbar-switch-langage-container {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
@@ -276,7 +277,7 @@ input:checked + .slider:before {
     display: flex;
     justify-content: center;
   }
-  .switch-langage-container {
+  .navbar-switch-langage-container {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
@@ -287,16 +288,16 @@ input:checked + .slider:before {
     top: 1%;
     position: fixed;
   }
-  .switch-langage-container div {
+  .navbar-switch-langage-container div {
     font-size: 1em;
   }
-  .switch {
+  .navbar-switch {
     position: relative;
     display: inline-block;
     width: 48px;
     height: 28px;
   }
-  .slider:before {
+  .navbar-slider:before {
     position: absolute;
     content: "";
     height: 21px;
@@ -307,7 +308,7 @@ input:checked + .slider:before {
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  input:checked + .slider:before {
+  input:checked + .navbar-slider:before {
     -webkit-transform: translateX(19px);
     -ms-transform: translateX(19px);
     transform: translateX(19px);

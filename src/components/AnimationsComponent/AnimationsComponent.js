@@ -236,12 +236,12 @@ function AnimationsComponent() {
   return (
     <>
       <>
-        <motion.div
+        {/* <motion.div
           className="progress-bar"
           style={{
             scaleX: scrollYProgress,
           }}
-        />
+        /> */}
       </>
     </>
   );

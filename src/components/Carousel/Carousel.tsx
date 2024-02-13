@@ -16,7 +16,7 @@ function Carousel({ langageState }) {
   return (
     <div className="carousel-container">
       <div className="carousel-title">
-        {langageState ? "Nos Projets" : "Our Project"}
+        {langageState ? "Nos Projets" : "Our Projects"}
       </div>
 
       <div className="carousel-wrap">
