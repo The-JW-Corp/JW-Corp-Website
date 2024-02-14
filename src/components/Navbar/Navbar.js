@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import "../../assets/fonts/Lato-Black.ttf";
 import jwblanc from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 function Navbar({ handlingLangage, langageState, checkDomain }) {
-  const [isClick, setIsClick] = useState(false);
-  const handleClick = () => {
-    setIsClick(!isClick);
-  };
+  const [displayNotification, setDisplayNotification] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setDisplayNotification(true);
+    }, 5000);
+  }, []);
   return (
     <>
       <section className="component-navbar">
@@ -28,49 +29,33 @@ function Navbar({ handlingLangage, langageState, checkDomain }) {
             </>
           )}
         </div>
-        <div className="switch-langage-container">
+
+        <HashLink
+          className="navbar-contact-us"
+          style={
+            displayNotification
+              ? {
+                  animation: " jellow 2s ease 0s 1 normal forwards",
+                }
+              : {}
+          }
+          to={"/#calendly-id"}
+        >
+          <div>
+            CONTACT US
+            {displayNotification && (
+              <div className="navbar-contact-us-notif">1</div>
+            )}
+          </div>
+        </HashLink>
+        <div className="navbar-switch-langage-container">
+          <div></div>
           <div>EN/FR  </div>
           <div>
-            <label className="switch">
+            <label className="navbar-switch">
               <input type="checkbox" onChange={handlingLangage} />
-              <span className="slider round"></span>
+              <span className="navbar-slider navbar-round"></span>
             </label>
-          </div>
-        </div>
-        <div className="navbar-container">
-          <div className="nav-container">
-            <nav className={isClick ? "navbar-active" : "navbar"}>
-              <div className="navbar-list-container">
-                <ul className="navbar-list">
-                  <li className={isClick ? "li1" : "li1"}>
-                    <Link to="/">{langageState ? "Accueil" : "Home"}</Link>
-                  </li>
-                  <li className={isClick ? "li2" : "li1"}>
-                    <HashLink to="/Services">
-                      {langageState ? <>Nos services</> : <>Our Services</>}
-                    </HashLink>
-                  </li>
-                  <li className={isClick ? "li3" : "li1"}>
-                    <HashLink to="/#form">Contact</HashLink>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <div></div>
-          {/* <div className="switch-langage-container">
-            FR/EN  
-            <label className="switch">
-              <input type="checkbox" onChange={handlingLangage} />
-              <span className="slider round"></span>
-            </label>
-          </div> */}
-          <div className="burger">
-            <div className="" onClick={handleClick}>
-              <span className={isClick ? "span span1-active" : "span"}></span>
-              <span className={isClick ? "span span2-active" : "span"}></span>
-              <span className={isClick ? "span span3-active" : "span"}></span>
-            </div>
           </div>
         </div>
       </section>
