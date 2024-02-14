@@ -38,7 +38,7 @@ function OurTeam({ langageState }) {
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fsajeed-prfile-pic-jw.png?alt=media&token=e5b37b23-8248-4a72-9dfc-f9b8b21eda92",
       // xUrl: "",
       linkedinUrl: "https://www.linkedin.com/in/sajistreo3/",
-      githubUrl: "",
+      githubUrl: "https://github.com/Sajistreo3",
     },
     {
       name: "Elies Carat",
@@ -136,6 +136,7 @@ function OurTeam({ langageState }) {
                       </svg>
                     </a>
                   </li>
+                  {person.githubUrl &&
                   <li>
                     <a href={person.githubUrl} className="social-link">
                       <span className="sr-only"></span>
@@ -145,6 +146,7 @@ function OurTeam({ langageState }) {
                       </svg>
                     </a>
                   </li>
+                  }
                 </ul>
               </li>
             ))}
