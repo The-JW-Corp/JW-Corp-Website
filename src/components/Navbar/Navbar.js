@@ -4,7 +4,7 @@ import jwblanc from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-function Navbar({ handlingLangage, langageState, checkDomain }) {
+function Navbar({ handlingLangage, checkDomain }) {
   const [displayNotification, setDisplayNotification] = useState(false);
   useEffect(() => {
     setTimeout(() => {

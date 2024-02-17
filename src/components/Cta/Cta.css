@@ -48,16 +48,20 @@
   color: #fff;
   text-decoration: none;
 }
-.cta-button:hover{
+.cta-button:hover {
   background-color: transparent;
   border: 1px #fff solid;
-  transition: all .6s;
-  -moz-transition: all .6s;
-	-webkit-transition: all .6s;
+  transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -webkit-transition: all 0.6s;
 }
+
 @media (min-width: 344px) {
   .cta-wrap {
     height: 320px;
+  }
+  .cta-component {
+    margin-top: 40px;
   }
 }
 @media (min-width: 460px) {
@@ -79,9 +83,6 @@
   }
 }
 @media (min-width: 640px) {
-  .cta-component {
-    /* height: 200vh; */
-  }
   .cta-wrap {
     align-items: flex-start;
     height: 220px;
@@ -102,6 +103,9 @@
   }
 }
 @media (min-width: 768px) {
+  .cta-component {
+    margin-top: 0;
+  }
   .cta-wrap {
     height: 230px;
   }

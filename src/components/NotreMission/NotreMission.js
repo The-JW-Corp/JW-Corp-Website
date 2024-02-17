@@ -54,7 +54,7 @@ const NotreMission = ({ langageState }) => {
                 </>
               ) : (
                 <>
-                  We mobilize our knowledge and skills to serve your your
+                  We mobilize our knowledge and skills to serve your
                   Blockchain projects.
                 </>
               )}
@@ -175,11 +175,7 @@ const NotreMission = ({ langageState }) => {
           </HashLink>
         </div>
       </div>
-      <div className="mission-button-container">
-        <HashLink to="/Services">
-          {langageState ? <>EN SAVOIR +</> : <>READ MORE</>}
-        </HashLink>
-      </div>
+
     </section>
   );
 };

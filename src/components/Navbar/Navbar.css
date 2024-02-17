@@ -342,6 +342,7 @@ input:checked + .navbar-slider:before {
   }
   .navbar-switch-langage-container {
     right: 8%;
+    top: 5%;
   }
   .navbar-contact-us {
     display: none;
