@@ -1,13 +1,11 @@
 import React from "react";
 import "./Animations-Component.css";
-import { motion, useScroll } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useEffect } from "react";
 
 function AnimationsComponent() {
-  const { scrollYProgress } = useScroll();
 
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -236,12 +234,12 @@ function AnimationsComponent() {
   return (
     <>
       <>
-        <motion.div
+        {/* <motion.div
           className="progress-bar"
           style={{
             scaleX: scrollYProgress,
           }}
-        />
+        /> */}
       </>
     </>
   );

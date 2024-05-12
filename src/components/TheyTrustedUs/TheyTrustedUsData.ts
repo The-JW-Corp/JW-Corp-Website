@@ -31,8 +31,8 @@ export const logosData: LogoData[] = [
     alt: "",
   },
   {
-    id: "global-expertise-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FGlobal_expertise.png?alt=media&token=91522613-9fda-46ec-b544-61b1fbefef98",
+    id: "cergy",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FCY-Cergy-Paris-Universite_coul-1783154708.png?alt=media&token=f672ae30-cfb5-4281-8092-88e5e12ba417",
     alt: "",
   },
   {
@@ -81,8 +81,8 @@ export const logosData: LogoData[] = [
     alt: "",
   },
   {
-    id: "global-expertise-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FGlobal_expertise.png?alt=media&token=91522613-9fda-46ec-b544-61b1fbefef98",
+    id: "cergy",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FCY-Cergy-Paris-Universite_coul-1783154708.png?alt=media&token=f672ae30-cfb5-4281-8092-88e5e12ba417",
     alt: "",
   },
   {
