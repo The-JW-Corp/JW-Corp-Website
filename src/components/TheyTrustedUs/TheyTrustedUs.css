@@ -123,7 +123,9 @@
   #sofan-logo {
     height: calc(25px - 5%) ;
   }
-
+  #cergy{
+    height: 40px;
+  }
   #metalyde-logo {
     height: calc(70px - 5%) ;
     border-radius: 10px;
@@ -132,7 +134,7 @@
     height: calc(70px - 5%) ;
   }
   #republike-logo {
-    height: calc(25px - 5%) ;
+    height: calc(25px - 7.5%) ;
   }
   #harbor-logo {
     height: calc(70px - 5%) ;
