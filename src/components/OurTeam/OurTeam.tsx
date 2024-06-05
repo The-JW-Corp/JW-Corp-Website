@@ -15,7 +15,7 @@ function OurTeam({ langageState }) {
     },
     {
       name: "Rami Abdou",
-      role: "Co-Fondateur & Fullstack Developer",
+      role: "Co-Fondateur & Frontend Developer",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Frami-pic.svg?alt=media&token=6d40f0fa-2e3f-48ad-8b90-422b33cc1730",
       xUrl: "https://twitter.com/RamiAbdou_jw",
@@ -31,14 +31,23 @@ function OurTeam({ langageState }) {
       linkedinUrl: "https://www.linkedin.com/in/remi-blaise/",
       githubUrl: "https://github.com/remi-blaise",
     },
+    // {
+    //   name: "Shajeed Islam",
+    //   role: "Fullstack Developer, Web & Mobile",
+    //   imageUrl:
+    //     "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fsajeed-prfile-pic-jw.png?alt=media&token=e5b37b23-8248-4a72-9dfc-f9b8b21eda92",
+    //   // xUrl: "",
+    //   linkedinUrl: "https://www.linkedin.com/in/sajistreo3/",
+    //   githubUrl: "https://github.com/Sajistreo3",
+    // },
     {
-      name: "Shajeed Islam",
-      role: "Fullstack Developer, Web & Mobile",
+      name: "Eddy Boughioul",
+      role: "Senior Web3 Fullstack Engineer",
       imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fsajeed-prfile-pic-jw.png?alt=media&token=e5b37b23-8248-4a72-9dfc-f9b8b21eda92",
+        "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2FEddyPPJWCorp.png?alt=media&token=214da443-3dc5-49b8-9d53-8505c2dd2af6",
       // xUrl: "",
-      linkedinUrl: "https://www.linkedin.com/in/sajistreo3/",
-      githubUrl: "https://github.com/Sajistreo3",
+      linkedinUrl: "https://www.linkedin.com/in/eddy-boughioul-aa40aaa9/",
+      githubUrl: "https://github.com/youtpout",
     },
     {
       name: "Elies Carat",
