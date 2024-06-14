@@ -50,6 +50,13 @@ function OurTeam({ langageState }) {
       githubUrl: "https://github.com/youtpout",
     },
     {
+      name: "Raphaella Wabi",
+      role: "Head Of Business",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fprofile-pic-Raphaella.png?alt=media&token=0195a95c-31d3-4a6e-a831-e5c0df87434b",
+      linkedinUrl: "https://www.linkedin.com/in/heyraphaellaw/",
+    },
+    {
       name: "Elies Carat",
       role: "Chief Marketing Officer (CMO)",
       imageUrl:
