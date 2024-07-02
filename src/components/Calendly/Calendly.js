@@ -176,7 +176,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
           height: calendlyHeight,
           width: calendlyWidth,
         }}
-        url="https://calendly.com/jw-corp/rendez-vous-jw-corp"
+        url="https://calendly.com/jw_corp/free-consultation"
       />
     </section>
   );
