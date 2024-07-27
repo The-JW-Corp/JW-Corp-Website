@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { HashLink } from "react-router-hash-link";
 // import { useState } from "react";
 
-function LandingPage({ langageState }) {
+function LandingPage({ langageState, isMobile }) {
   return (
     <>
       {/* French */}

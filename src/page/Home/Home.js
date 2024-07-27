@@ -14,6 +14,7 @@ import Calendly from "../../components/Calendly/Calendly";
 import Carousel from "../../components/Carousel/Carousel.tsx";
 import TheyTrustedUs from "../../components/TheyTrustedUs/TheyTrustedUs.tsx";
 import OurTeam from "../../components/OurTeam/OurTeam.tsx";
+import { isMobile } from "react-device-detect";
 function Home({ langageState }) {
   const [docRefFromHomeState, setDocRefFromState] = useState();
   const [userIpAddressFromLinkedin, setUserIpAddressFromLinkedin] = useState();
@@ -71,16 +72,18 @@ function Home({ langageState }) {
   }, [userIpAddressFromLinkedin, urlEnd, navigate]);
   return (
     <>
-      <LandingPage langageState={langageState} />
+      <LandingPage isMobile={isMobile} langageState={langageState} />
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
-      <Carousel langageState={langageState}/>
-      <TheyTrustedUs/>
-      <OurTeam/>
+      <Carousel langageState={langageState} />
+      {isMobile == false && <TheyTrustedUs />}
+
+      <OurTeam />
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
       <Google langageState={langageState} />
       <Footer langageState={langageState} />
+
       <AnimationsComponent langageState={langageState} />
     </>
   );
