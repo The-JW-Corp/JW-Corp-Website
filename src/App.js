@@ -3,7 +3,7 @@ import Home from "./page/Home/Home";
 import Services from "./page/Services/Services";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar.tsx";
 import MentionsLegales from "./components/MentionsLegales/MentionsLegales";
 import BitcoinPrice from "./page/BitcoinPrice/BitcoinPrice";
 function App() {

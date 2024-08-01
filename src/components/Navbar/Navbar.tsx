@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import jwblanc from "../../assets/logoJWCorp/jwlogosolutionblanc.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-function Navbar({ handlingLangage, checkDomain }) {
-  const [displayNotification, setDisplayNotification] = useState(false);
+interface NavbarProps {
+  handlingLangage: () => void;
+  checkDomain: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ handlingLangage, checkDomain }) => {
+  const [displayNotification, setDisplayNotification] = useState<boolean>(false);
+
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setDisplayNotification(true);
     }, 5000);
+
+    return () => clearTimeout(timer);
   }, []);
+
   return (
     <>
       <section className="component-navbar">
         <div className="navbar-logo-container">
           {checkDomain ? (
-            <>
-              <a href="https://jwcorp.io">
-                <img src={jwblanc} alt="JW Corp logo blanc" />
-              </a>
-            </>
+            <a href="https://jwcorp.io">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/jwlogosolutionblanc.svg?alt=media&token=7c0af8d1-bdc2-4933-8911-2862ee8c33f7"
+                alt="JW Corp logo blanc"
+              />
+            </a>
           ) : (
-            <>
-              <Link to="/">
-                <img src={jwblanc} alt="JW Corp logo blanc" />
-              </Link>
-            </>
+            <Link to="/">
+              <img src="path/to/jwblanc" alt="JW Corp logo blanc" />
+            </Link>
           )}
         </div>
 
@@ -35,7 +42,7 @@ function Navbar({ handlingLangage, checkDomain }) {
           style={
             displayNotification
               ? {
-                  animation: " jellow 2s ease 0s 1 normal forwards",
+                  animation: "jellow 2s ease 0s 1 normal forwards",
                 }
               : {}
           }
@@ -61,5 +68,6 @@ function Navbar({ handlingLangage, checkDomain }) {
       </section>
     </>
   );
-}
+};
+
 export default Navbar;

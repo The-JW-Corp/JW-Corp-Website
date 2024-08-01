@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
 import LandingPage from "../../components/LandingPage/LandingPage";
-import NotreMission from "../../components/NotreMission/NotreMission";
+import NotreMission from "../../components/NotreMission/NotreMission.tsx";
 import NosValeurs from "../../components/NosValeurs/NosValeurs";
 import Google from "../../components/Googlemaps/Google";
 import Footer from "../../components/Footer/Footer";
@@ -76,7 +76,7 @@ function Home({ langageState }) {
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
       <Carousel langageState={langageState} />
-      {isMobile == false && <TheyTrustedUs />}
+      {isMobile === false && <TheyTrustedUs />}
 
       <OurTeam />
       <NosValeurs langageState={langageState} />

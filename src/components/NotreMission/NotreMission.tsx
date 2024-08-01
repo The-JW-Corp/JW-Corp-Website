@@ -1,7 +1,10 @@
 import React from "react";
 import "./NotreMission.css";
 import { HashLink } from "react-router-hash-link";
-const NotreMission = ({ langageState }) => {
+interface NotreMissionProps {
+  langageState: boolean;
+}
+const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
   return (
     <section id="mission" className="notreMission-component">
       <div id="notre-mission-title" className="notreMission-title-wrap">
@@ -54,8 +57,8 @@ const NotreMission = ({ langageState }) => {
                 </>
               ) : (
                 <>
-                  We mobilize our knowledge and skills to serve your
-                  Blockchain projects.
+                  We mobilize our knowledge and skills to serve your Blockchain
+                  projects.
                 </>
               )}
             </p>
@@ -119,7 +122,7 @@ const NotreMission = ({ langageState }) => {
             className="hashlink-notre-mission notreMission-service"
             to={"/Services#auditservice"}
           >
-            <h3>Audit</h3>
+            <h3>Technical advisoring</h3>
             <p>
               {langageState ? (
                 <>
@@ -129,9 +132,8 @@ const NotreMission = ({ langageState }) => {
                 </>
               ) : (
                 <>
-                  Your projects or your smart contracts audited by our experts.
-                  We send you a detailed report containing in particular
-                  observations and action plan.
+                  Feature specifications, product vision and strategy, we help
+                  you to manage the project from a technical point of view
                 </>
               )}
             </p>
@@ -175,7 +177,6 @@ const NotreMission = ({ langageState }) => {
           </HashLink>
         </div>
       </div>
-
     </section>
   );
 };

@@ -87,30 +87,6 @@ function AnimationsComponent() {
     slideInLeftServiceTitle("#notre-mission-title");
   }, []);
 
-  // const slideInLeftServiceConseil = (element) => {
-  //   gsap.fromTo(
-  //     element,
-  //     {
-  //       opacity: 0,
-  //       x: -200,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       x: 0,
-  //       delay: 0.6,
-  //       duration: 0.6,
-  //       scrollTrigger: {
-  //         trigger: element,
-  //         start: "20px 60%",
-  //         end: "bottom center",
-  //         // toggleActions: "restart none none none",
-  //       },
-  //     }
-  //   );
-  // };
-  // useEffect(() => {
-  //   slideInLeftServiceConseil("#conseil-paragraph");
-  // }, []);
 
   const slideInLeftServiceDev = (element) => {
     gsap.fromTo(
@@ -137,55 +113,6 @@ function AnimationsComponent() {
     slideInLeftServiceDev("#notre-mission-animation");
   }, []);
 
-  // const slideInLeftServiceAudit = (element) => {
-  //   gsap.fromTo(
-  //     element,
-  //     {
-  //       opacity: 0,
-  //       x: -200,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       x: 0,
-  //       delay: 1.9,
-  //       duration: 0.6,
-  //       scrollTrigger: {
-  //         trigger: element,
-  //         start: "20px 80%",
-  //         end: "bottom center",
-  //         // toggleActions: "restart none none none",
-  //       },
-  //     }
-  //   );
-  // };
-  // useEffect(() => {
-  //   slideInLeftServiceAudit("#audit");
-  // }, []);
-
-  // const slideInLeftServiceRecherche = (element) => {
-  //   gsap.fromTo(
-  //     element,
-  //     {
-  //       opacity: 0,
-  //       x: -200,
-  //     },
-  //     {
-  //       opacity: 1,
-  //       x: 0,
-  //       delay: 2.5,
-  //       duration: 0.6,
-  //       scrollTrigger: {
-  //         trigger: element,
-  //         start: "20px 80%",
-  //         end: "bottom center",
-  //         // toggleActions: "restart none none none",
-  //       },
-  //     }
-  //   );
-  // };
-  // useEffect(() => {
-  //   slideInLeftServiceRecherche("#recherche-developpement");
-  // }, []);
   // Animation "lineAnimation" in Formulaire --> Lines
   const lineTriggerTop = (element) => {
     gsap.fromTo(
@@ -233,14 +160,6 @@ function AnimationsComponent() {
 
   return (
     <>
-      <>
-        {/* <motion.div
-          className="progress-bar"
-          style={{
-            scaleX: scrollYProgress,
-          }}
-        /> */}
-      </>
     </>
   );
 }

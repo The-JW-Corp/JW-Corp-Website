@@ -25,3 +25,8 @@ yarn-error.log*
 
 
 src/firebaseConfig.js
+
+# Next
+.next
+next-env.d.ts
+dist
