@@ -1,9 +1,9 @@
 import React from "react";
 import "./TheyTrustedUs.css";
-import { logosData } from "./TheyTrustedUsData.ts";
+// @ts-ignore
+import { logosData } from "./TheyTrustedUsData.tsx";
 import { v4 as uuidv4 } from 'uuid';
 const TheyTrustedUs: React.FC = () => {
-  console.log(logosData[0].src)
   return (
     <div className="they-trusted-us-container">
       <div className="they-trusted-us-logo-container">

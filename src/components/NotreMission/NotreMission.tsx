@@ -8,7 +8,7 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
   return (
     <section id="mission" className="notreMission-component">
       <div id="notre-mission-title" className="notreMission-title-wrap">
-        <h2>{langageState ? <>Notre mission</> : <>Our mission</>} </h2>
+        <h2>{langageState ? <>Nos missions</> : <>Our missions</>} </h2>
         <span>
           {langageState ? (
             <>
@@ -17,53 +17,12 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
             </>
           ) : (
             <>
-              A team of passionate people to accompany you on your Blockchain
-              projects.
+             We've worked these 3 past years on more than 20 projects by providing theses services:
             </>
           )}
         </span>
       </div>
       <div className="notreMission-service-container">
-        <div
-          id="notre-mission-animation"
-          className="notreMission-service-subwrap"
-        >
-          <div className="notreMission-service-img-wrap">
-            <HashLink
-              className="notreMission-icone-top"
-              to={"/Services#conseil"}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                <path d="M192 96c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm-8 384V352h16V480c0 17.7 14.3 32 32 32s32-14.3 32-32V192h56 64 16c17.7 0 32-14.3 32-32s-14.3-32-32-32H384V64H576V256H384V224H320v48c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H368c-26.5 0-48 21.5-48 48v80H243.1 177.1c-33.7 0-64.9 17.7-82.3 46.6l-58.3 97c-9.1 15.1-4.2 34.8 10.9 43.9s34.8 4.2 43.9-10.9L120 256.9V480c0 17.7 14.3 32 32 32s32-14.3 32-32z" />
-              </svg>
-            </HashLink>
-          </div>
-          <HashLink
-            className="hashlink-notre-mission notreMission-service"
-            to={"/Services#conseil"}
-          >
-            <h3>
-              {langageState ? (
-                <> Conseil, Accompagnement & Intégration</>
-              ) : (
-                <>Consulting, Support & Integration</>
-              )}
-            </h3>
-            <p>
-              {langageState ? (
-                <>
-                  Nous mobilisons nos connaissances et nos compétences au
-                  service de vos projets Blockchain.
-                </>
-              ) : (
-                <>
-                  We mobilize our knowledge and skills to serve your Blockchain
-                  projects.
-                </>
-              )}
-            </p>
-          </HashLink>
-        </div>
         <div
           id="notre-mission-animation"
           className="notreMission-service-subwrap"
@@ -82,23 +41,19 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
             className="hashlink-notre-mission notreMission-service"
             to={"/Services#smartcontract-dev"}
           >
-            <h3>
-              {langageState ? (
-                <>Développement de Smart-Contracts</>
-              ) : (
-                <>Smart-contracts development</>
-              )}
-            </h3>
+            <h3>{langageState ? <>Développement</> : <>Development</>}</h3>
             <p>
               {langageState ? (
                 <>
-                  Sécurisés, optimisés et personalisés, notre équipe développe
-                  des smart-contracts adaptés à vos besoins.
+                  Smartcontracts, Bots, Frontend, Backend. Nous développons vos
+                  projets avec un focus sur l'expérience utilisateurs en
+                  optimisant la rétention d'utilisateur
                 </>
               ) : (
                 <>
-                  Secure, optimized and personalized, our team develops
-                  smart-contracts adapted to your needs.
+                  Smartcontracts, Bots, Frontend, Backend. We develop your
+                  projects with user experience focus in mind to optimize user
+                  retention
                 </>
               )}
             </p>
@@ -134,6 +89,46 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
                 <>
                   Feature specifications, product vision and strategy, we help
                   you to manage the project from a technical point of view
+                </>
+              )}
+            </p>
+          </HashLink>
+        </div>
+        <div
+          id="notre-mission-animation"
+          className="notreMission-service-subwrap"
+        >
+          <div className="notreMission-service-img-wrap">
+            <HashLink
+              className="notreMission-icone-top"
+              to={"/Services#conseil"}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path d="M192 96c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm-8 384V352h16V480c0 17.7 14.3 32 32 32s32-14.3 32-32V192h56 64 16c17.7 0 32-14.3 32-32s-14.3-32-32-32H384V64H576V256H384V224H320v48c0 26.5 21.5 48 48 48H592c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H368c-26.5 0-48 21.5-48 48v80H243.1 177.1c-33.7 0-64.9 17.7-82.3 46.6l-58.3 97c-9.1 15.1-4.2 34.8 10.9 43.9s34.8 4.2 43.9-10.9L120 256.9V480c0 17.7 14.3 32 32 32s32-14.3 32-32z" />
+              </svg>
+            </HashLink>
+          </div>
+          <HashLink
+            className="hashlink-notre-mission notreMission-service"
+            to={"/Services#conseil"}
+          >
+            <h3>
+              {langageState ? (
+                <> Marketing</>
+              ) : (
+                <>Marketing</>
+              )}
+            </h3>
+            <p>
+              {langageState ? (
+                <>
+                  Community growing, growth hacking, blockchain marketing
+                  strategy
+                </>
+              ) : (
+                <>
+                  Community growing, growth hacking, blockchain marketing
+                  strategy
                 </>
               )}
             </p>
