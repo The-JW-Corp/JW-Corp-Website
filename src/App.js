@@ -4,7 +4,6 @@ import Services from "./page/Services/Services";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar.tsx";
-import MentionsLegales from "./components/MentionsLegales/MentionsLegales";
 import BitcoinPrice from "./page/BitcoinPrice/BitcoinPrice";
 function App() {
   const [langageState, setLangageState] = useState(false);
@@ -33,10 +32,6 @@ function App() {
           <Route
             path="/Services"
             element={<Services langageState={langageState} />}
-          />
-          <Route
-            path="/MentionsLegales"
-            element={<MentionsLegales langageState={{ langageState }} />}
           />
           <Route path="/Bitcoin-price" element={<BitcoinPrice />} />
         </Routes>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./MentionsLegales.css";
+// import "./MentionsLegales.css";
 function MentionsLegales() {
   return (
     <section className="mentions-legales-container">
