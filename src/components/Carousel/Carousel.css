@@ -139,6 +139,15 @@ transition-duration:600ms ;
   background-size: contain;
   /* background-size:60% ; */
 }
+.swiper-slide:nth-child(6n) {
+  background-color: black;
+  background-image: url("../../assets/nobrainer.png");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  /* background-size:60% ; */
+}
 @media (max-width: 1050px) {
   .swiper {
     width: 550px;

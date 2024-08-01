@@ -57,6 +57,11 @@ function Carousel({ langageState }) {
               <div className="carousel-slide-wrap">Stone Real Estate</div>
             </div>
           </SwiperSlide>
+          <SwiperSlide>
+            <div className="carousel-slide-container">
+              <div className="carousel-slide-wrap">NoBrainer</div>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>
