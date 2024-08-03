@@ -1,5 +1,5 @@
 import '../index.css'
- 
+import { Analytics } from '@vercel/analytics/react';
 export default function RootLayout({
   children,
 }: {
@@ -28,7 +28,7 @@ export default function RootLayout({
         </head>
         <body>
           <noscript>You need to enable JavaScript to run this app.</noscript>
-          <div id="root">{children}</div>
+          <div id="root">{children}<Analytics /></div>
         </body>
       </html>
     </>
