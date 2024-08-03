@@ -1,7 +1,6 @@
 import React from "react";
 import "./OurTeam.css";
-// import 'tailwindcss/tailwind.css'
-function OurTeam({ langageState }) {
+function OurTeam() {
   const people = [
     {
       name: "Mathéo Vallone",
@@ -41,7 +40,7 @@ function OurTeam({ langageState }) {
     //   githubUrl: "https://github.com/Sajistreo3",
     // },
     {
-      name: "Eddy Boughioul",
+      name: "Eddy",
       role: "Senior Web3 Fullstack Engineer",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2FEddyPPJWCorp.png?alt=media&token=214da443-3dc5-49b8-9d53-8505c2dd2af6",
@@ -57,7 +56,7 @@ function OurTeam({ langageState }) {
     //   linkedinUrl: "https://www.linkedin.com/in/heyraphaellaw/",
     // },
     {
-      name: "Elies Carat",
+      name: "Elies",
       role: "Chief Marketing Officer (CMO)",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Felies-profile-pic-jw.png?alt=media&token=49ddc63a-74dc-4b07-9642-9a8316302fef",
@@ -66,7 +65,7 @@ function OurTeam({ langageState }) {
       // githubUrl: "",
     },
     {
-      name: "Victor Albe",
+      name: "Victor",
       role: "Adjoint Marketing",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fvictor-pro.svg?alt=media&token=d5a4cf0c-39c8-42cd-bbf6-f71647e2d04f",
@@ -75,7 +74,7 @@ function OurTeam({ langageState }) {
       // githubUrl: "",
     },
     {
-      name: "Daniel V.",
+      name: "Daniel",
       role: "Senior UI/UX Designer",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fprofile-pic%20(1).png?alt=media&token=73a7d334-3ea9-414d-8404-e99517067e00",
