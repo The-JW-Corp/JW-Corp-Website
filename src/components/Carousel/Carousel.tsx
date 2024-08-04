@@ -34,12 +34,12 @@ function Carousel({ langageState }) {
             className="swiper-slide-container"
           >
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap">Republike</div>
+              <div className="carousel-slide-wrap">Philippe Gonet</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="carousel-slide-container">
-              <div className="carousel-slide-wrap">Philippe Gonet</div>
+              <div className="carousel-slide-wrap">Republike</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>

@@ -13,7 +13,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
     onProfilePageViewed: () => console.log("onProfilePageViewed"),
     onDateAndTimeSelected: () => handleDateTimeSelected(),
     // onEventTypeViewed: () => getIpAddress(),
-    onEventScheduled: (e) => handleEventSheduled(),
+      onEventScheduled: (e) => handleEventSheduled(),
   });
   const handleResize = () => {
     // console.log(window.innerWidth);
