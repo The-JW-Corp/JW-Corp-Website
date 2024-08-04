@@ -3,7 +3,7 @@ import "./OurTeam.css";
 function OurTeam() {
   const people = [
     {
-      name: "Mathéo Vallone",
+      name: "Mathéo",
       role: "Co-Fondateur & Fullstack Smartcontract Developer",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fmatheo-pic.png?alt=media&token=c350a81f-5877-47aa-9aa9-c48ca75cb0d9",
@@ -13,7 +13,7 @@ function OurTeam() {
       githubUrl: "https://github.com/JWMatheo",
     },
     {
-      name: "Rami Abdou",
+      name: "Rami",
       role: "Co-Fondateur & Frontend Developer",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Frami-pic.svg?alt=media&token=6d40f0fa-2e3f-48ad-8b90-422b33cc1730",
@@ -22,7 +22,7 @@ function OurTeam() {
       githubUrl: "https://github.com/JW-Rami",
     },
     {
-      name: "Rémi Blaise",
+      name: "Rémi",
       role: "Chief Technology Officer (CTO)",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fremi-blaise-jw.png?alt=media&token=f09b1aaf-0a2e-41ac-a879-358625c5e3a8",

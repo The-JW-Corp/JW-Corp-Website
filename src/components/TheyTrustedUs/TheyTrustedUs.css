@@ -4,8 +4,6 @@
   color: white;
   white-space: nowrap;
   position: relative;
-  /* padding: 60px 0; */
-  /* max-height: 100px; */
   height: 200px;
   margin-top: 50px;
 }
@@ -14,7 +12,6 @@
   font-weight: 800;
   width: 100%;
   display: flex;
-  /* color: black; */
   justify-content: center;
   padding-top: 20px;
 }
@@ -30,7 +27,6 @@
 }
 
 .they-trusted-us-logo-container {
-  /* display: inline-flex;  */
   position: absolute;
   top: 25px;
   display: flex;
@@ -38,16 +34,10 @@
   animation: slide 10s linear infinite;
 }
 
-/* .they-trusted-us-logo-container > * {
-  margin: 0 30px; 
-  display: flex;
-  align-items: center;
-} */
 .they-trusted-us-logo-container > div {
   margin: 0 30px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .they-trusted-us-logo-container img {
@@ -55,7 +45,6 @@
 }
 #betterscan-logo {
   height: 20px;
-  /* width: 150px; */
 }
 #mywatcher-logo {
   height: 25px;
@@ -74,6 +63,9 @@
   height: 70px;
 }
 #cergy{
+  height: 90px;
+}
+#frenchtechmy{
   height: 90px;
 }
 #republike-logo {
@@ -114,11 +106,9 @@
   }
   #betterscan-logo {
     height:20px ;
-    /* width: 150px; */
   }
   #mywatcher-logo {
     height: calc(25px - 0%) ;
-    /* height:  30px; */
   }
   #sofan-logo {
     height: calc(25px - 5%) ;
