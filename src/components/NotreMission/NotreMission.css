@@ -78,11 +78,6 @@
   transition: .5s;
 }
 
-/* .notreMission-service:hover {
-  color: blueviolet !important;
-  transition: 0.5s;
-  fill: blueviolet;
-} */
 .notreMission-service h3 {
   font-weight: 600;
   font-size: 1.5em;
@@ -226,10 +221,3 @@
     width: 75%;
   }
 }
-/* @media (min-width: 1536px) { 
-  .notreMission-service-container {
-    width: 1536px;
-    background-color: blue;
-  }
- } */
-
