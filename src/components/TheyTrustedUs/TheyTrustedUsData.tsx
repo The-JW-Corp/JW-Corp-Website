@@ -36,6 +36,11 @@ export const logosData: LogoData[] = [
     alt: "Cergy University",
   },
   {
+    id: "masverse",
+    src: "https://cdn.prod.website-files.com/65a687d579bf9ab525e62fcd/6698d3127851351537371ae8_Masverse%20R%20logo-04%201.svg",
+    alt: "Masverse",
+  },
+  {
     id: "frenchtechmy",
     src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FLogo_FT_Malaysia_Blanc-1-828x1024.png?alt=media&token=f72a7468-9e27-4662-87d3-08af264bdcec",
     alt: "French Tech Malaysia",
@@ -89,6 +94,11 @@ export const logosData: LogoData[] = [
     id: "cergy",
     src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2FCY-Cergy-Paris-Universite_coul-1783154708.png?alt=media&token=f672ae30-cfb5-4281-8092-88e5e12ba417",
     alt: "Cergy University",
+  },
+  {
+    id: "masverse",
+    src: "https://cdn.prod.website-files.com/65a687d579bf9ab525e62fcd/6698d3127851351537371ae8_Masverse%20R%20logo-04%201.svg",
+    alt: "Masverse",
   },
   {
     id: "frenchtechmy",

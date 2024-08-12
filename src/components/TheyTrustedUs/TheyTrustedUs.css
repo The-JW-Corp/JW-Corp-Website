@@ -7,6 +7,11 @@
   height: 200px;
   margin-top: 50px;
 }
+.they-trusted-us-element{
+  /* height: fit-content; */
+  height: 150px;
+  /* background-color: red; */
+}
 .they-trusted-us-title {
   font-size: 2.5em;
   font-weight: 800;
@@ -31,7 +36,7 @@
   top: 25px;
   display: flex;
   justify-content: center;
-  animation: slide 10s linear infinite;
+  animation: slide 35s linear infinite;
 }
 
 .they-trusted-us-logo-container > div {
@@ -79,6 +84,9 @@
   height: 55px;
 }
 #html-agency-logo {
+  height: 35px;
+}
+#masverse{
   height: 35px;
 }
 @keyframes slide {
