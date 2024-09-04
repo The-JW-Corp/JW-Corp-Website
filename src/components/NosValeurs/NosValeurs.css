@@ -35,6 +35,9 @@ h6 {
   display: flex;
   justify-content: center;
 }
+.nos-valeurs-paragraphe{
+  display: flex;
+}
 @media (min-width: 250px) {
   .bloc-nos-valeurs {
     height: 100%;

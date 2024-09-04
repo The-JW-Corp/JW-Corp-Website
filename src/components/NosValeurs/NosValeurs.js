@@ -2,7 +2,7 @@ import React from "react";
 import "./NosValeurs.css";
 import { TypeAnimation } from "react-type-animation";
 import GreyParagraph from "./UIelement/GreyParagraph";
-
+// import RamiMatheo from '../../assets/MatheoRami.png'
 function NosValeurs({ langageState }) {
   return (
     <section className="bloc-nos-valeurs">
@@ -92,6 +92,9 @@ function NosValeurs({ langageState }) {
               </>
             )}
           </GreyParagraph>
+          {/* <div className="">
+            <img src={RamiMatheo} alt="Rami Matheo" />
+            </div> */}
         </div>
       </div>
     </section>
