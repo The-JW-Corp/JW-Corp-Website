@@ -93,7 +93,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
 
   async function handleDateTimeSelected() {
     try {
-      const docRef = doc(db, "calendlyViewed", docRefState); // Obtenez une référence au document spécifique
+      const docRef = doc(db, "calendlyViewed", docRefState); 
       await updateDoc(docRef, {
         date_time_selected: true,
       });
@@ -104,7 +104,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
   }
   async function handleEventSheduled() {
     try {
-      const docRef = doc(db, "calendlyViewed", docRefState); // Obtenez une référence au document spécifique
+      const docRef = doc(db, "calendlyViewed", docRefState);
       await updateDoc(docRef, {
         event_sheduled: true,
       });
@@ -129,7 +129,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
         }
       } else {
         try {
-          // await getIpAddress();  // Attendre que getIpAddress se termine
+          // await getIpAddress(); 
           const viewedAt = new Date();
           const calendlyViewedCollection = collection(db, "calendlyViewed");
           const docRef = await addDoc(calendlyViewedCollection, {
@@ -150,7 +150,6 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
     handleResize();
     function checkIfInView() {
       const rect = calendlyRef.current.getBoundingClientRect();
-      // console.log('Checking if Calendly is in view...')
       if (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -160,13 +159,13 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
       ) {
         getIpAddress();
         // handleCalendlyViewed();
-        window.removeEventListener("scroll", checkIfInView); // Supprimez l'écouteur d'événements une fois que le calendly est en vue
+        window.removeEventListener("scroll", checkIfInView);
       }
     }
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", checkIfInView);
     return () => {
-      window.removeEventListener("scroll", checkIfInView); // Nettoyez l'écouteur d'événements lorsque le composant est démonté
+      window.removeEventListener("scroll", checkIfInView); 
     };
   }, []);
   return (
