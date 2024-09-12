@@ -5,6 +5,7 @@ interface NotreMissionProps {
   langageState: boolean;
 }
 const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
+
   return (
     <section id="mission" className="notreMission-component">
       <div id="notre-mission-title" className="notreMission-title-wrap">
