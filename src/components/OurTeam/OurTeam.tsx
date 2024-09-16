@@ -11,7 +11,8 @@ function OurTeam() {
           <div className="intro-container">
             <h2 className="our-team-title">Meet our team</h2>
             <p className="our-team-description">
-              We’re a dynamic group of individuals who are passionate about what we do.
+              We’re a dynamic group of individuals who are passionate about what
+              we do.
             </p>
           </div>
           <ul className="our-team-list">
@@ -19,7 +20,9 @@ function OurTeam() {
               <TeamMember key={person.name} {...person} />
             ))}
           </ul>
-          <h2 className="our-team-title">Advisors</h2>
+          <h2 style={{ marginTop: "10px" }} className="our-team-title">
+            Advisors
+          </h2>
           <ul className="our-team-list">
             {advisors.map((advisor) => (
               <TeamMember key={advisor.name} {...advisor} />
