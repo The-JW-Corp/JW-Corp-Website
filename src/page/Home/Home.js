@@ -74,10 +74,10 @@ function Home({ langageState }) {
   return (
     <>
       <LandingPage isMobile={isMobile} langageState={langageState} />
-      {/* <WhoAreWe /> */}
-      {/* <TheyTrustedUs /> */}
-      {/* <NotreMission langageState={langageState} /> */}
-      {/* <Cta langageState={langageState} /> */}
+      <WhoAreWe />
+      <TheyTrustedUs />
+       <NotreMission langageState={langageState} />
+       <Cta langageState={langageState} /> 
       <Carousel langageState={langageState} />
 
       <OurTeam />
