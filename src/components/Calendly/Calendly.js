@@ -175,7 +175,7 @@ function Calendly({ urlEnd, docRefFromHomeState }) {
           height: calendlyHeight,
           width: calendlyWidth,
         }}
-        url="https://calendly.com/jw_corp/free-consultation"
+        url="https://calendly.com/jw_corp/exploration"
       />
     </section>
   );
