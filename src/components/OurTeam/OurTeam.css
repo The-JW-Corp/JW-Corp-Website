@@ -1,11 +1,11 @@
 .our-team-container {
-  padding-top: 6rem;
+  /* padding-top: 6rem; */
   padding-bottom: 6rem;
 }
 
 @media (min-width: 640px) {
   .our-team-container {
-    padding-top: 8rem;
+    /* padding-top: 8rem; */
     padding-bottom: 8rem;
   }
 }

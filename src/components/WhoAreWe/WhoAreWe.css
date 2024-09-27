@@ -6,7 +6,7 @@
 .who-are-we-wrap {
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   max-width: 1920px;
 }
 .who-are-we-left-column {

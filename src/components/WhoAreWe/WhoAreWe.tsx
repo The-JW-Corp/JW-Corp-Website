@@ -32,6 +32,9 @@ function WhoAreWe() {
               millions of dollars
             </li>
             <li>
+              <Image src={plus} alt="" /> 5 different blockchains utilized across various projects (EVM/SVM)
+            </li>
+            <li>
               <Image src={plus} alt="" /> Worked for diversified industries:
               Luxury brands, Real estate, Schools, Socials networks, DeFi,
               Gaming
