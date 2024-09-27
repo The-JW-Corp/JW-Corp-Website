@@ -28,14 +28,17 @@
 }
 .who-are-we-list-container {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
+  font-style: italic;
 }
 .who-are-we-list-container li {
   padding: 10px;
+
 }
 .who-are-we-list-container li > img {
   height: 15px;
   width: auto;
+  padding-right: 7px;
 }
 @media (max-width: 1500px) {
   .who-are-we-right-column img {
