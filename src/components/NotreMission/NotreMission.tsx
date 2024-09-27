@@ -9,7 +9,7 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
   return (
     <section id="mission" className="notreMission-component">
       <div id="notre-mission-title" className="notreMission-title-wrap">
-        <h2>{langageState ? <>Nos missions</> : <>Our missions</>} </h2>
+        <h2>{langageState ? <>Ce qu'on fait</> : <>What we do</>} </h2>
         <span>
           {langageState ? (
             <>
@@ -76,7 +76,7 @@ const NotreMission: React.FC<NotreMissionProps> = ({ langageState }) => {
             className="hashlink-notre-mission notreMission-service"
             to={"/#calendly-id"}
           >
-            <h3>Technical advisoring</h3>
+            <h3>Technical advising</h3>
             <p>
               {langageState ? (
                 <>
