@@ -76,7 +76,8 @@ function Home({ langageState }) {
       <NotreMission langageState={langageState} />
       <Cta langageState={langageState} />
       <Carousel langageState={langageState} />
-      {isMobile === false && <TheyTrustedUs />}
+      {/* {isMobile === false && <TheyTrustedUs />} */}
+      <TheyTrustedUs />
 
       <OurTeam />
       <NosValeurs langageState={langageState} />

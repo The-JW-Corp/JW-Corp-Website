@@ -54,8 +54,8 @@
 #mywatcher-logo {
   height: 25px;
 }
-#sofan-logo {
-  height: 25px;
+#certik {
+  height: 35px;
 }
 #lux-logo{
   height: 150px;
@@ -68,7 +68,7 @@
   height: 70px;
 }
 #cergy{
-  height: 90px;
+  height: 70px;
 }
 #frenchtechmy{
   height: 90px;
@@ -99,13 +99,10 @@
 }
 @media (max-width: 800px) {
   .they-trusted-us-container {
- 
     height: 150px;
-    margin-top: 50px;
   }
   .they-trusted-us-logo-container {
-    top: -25px;
-   
+    top: 0px;
   }
   .they-trusted-us-logo-container > div {
     margin: 0 5px;

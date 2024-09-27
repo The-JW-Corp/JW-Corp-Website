@@ -5,26 +5,29 @@ export interface TeamMemberData {
   xUrl?: string;
   linkedinUrl: string;
   githubUrl?: string;
+  telegramUrl?: string;
 }
 export const people: TeamMemberData[] = [
   {
     name: "Mathéo",
-    role: "Co-Fondateur & Fullstack Smartcontract Developer",
+    role: "Co-Founder & Fullstack Smartcontract Developer",
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Fmatheo-pic.png?alt=media&token=c350a81f-5877-47aa-9aa9-c48ca75cb0d9",
     xUrl: "https://twitter.com/jwmatheo",
     linkedinUrl: "https://www.linkedin.com/in/matheo-vallone/",
 
     githubUrl: "https://github.com/JWMatheo",
+    telegramUrl: "https://t.me/JW_Matheo",
   },
   {
     name: "Rami",
-    role: "Co-Fondateur & Frontend Developer",
+    role: "Co-Founder & Blockchain Consultant & Developer",
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/our-team%2Frami-pic.svg?alt=media&token=6d40f0fa-2e3f-48ad-8b90-422b33cc1730",
     xUrl: "https://twitter.com/RamiAbdou_jw",
     linkedinUrl: "https://www.linkedin.com/in/rami-abdou1/",
     githubUrl: "https://github.com/JW-Rami",
+    telegramUrl: "https://t.me/JW_Rami",
   },
   {
     name: "Rémi",

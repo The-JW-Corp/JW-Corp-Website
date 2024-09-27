@@ -5,14 +5,47 @@ interface TeamMemberProps {
   xUrl?: string;
   linkedinUrl: string;
   githubUrl?: string;
+  telegramUrl?: string;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageUrl, xUrl, linkedinUrl, githubUrl }) => (
+const TeamMember: React.FC<TeamMemberProps> = ({
+  name,
+  role,
+  imageUrl,
+  xUrl,
+  linkedinUrl,
+  githubUrl,
+  telegramUrl,
+}) => (
   <li className="team-member">
     <img className="member-photo" src={imageUrl} alt={name} />
     <h3 className="member-name">{name}</h3>
     <p className="member-role">{role}</p>
     <ul className="social-links">
+      <li>
+        <a href={linkedinUrl} className="social-link">
+          <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fillRule="evenodd"
+              d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </a>
+      </li>
+      {telegramUrl && (
+        <li>
+          <a href={telegramUrl} className="social-link">
+            <svg
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 496 512"
+            >
+              <path d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z" />
+            </svg>
+          </a>
+        </li>
+      )}
       {xUrl && (
         <li>
           <a href={xUrl} className="social-link">
@@ -22,13 +55,6 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageUrl, xUrl, lin
           </a>
         </li>
       )}
-      <li>
-        <a href={linkedinUrl} className="social-link">
-          <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-          </svg>
-        </a>
-      </li>
       {githubUrl && (
         <li>
           <a href={githubUrl} className="social-link">

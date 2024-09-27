@@ -6,19 +6,9 @@ export interface LogoData {
 
 export const logosData: LogoData[] = [
   {
-    id: "betterscan-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fbetterscanlogotext.svg?alt=media&token=e719a4f5-1a3e-4975-b7ff-ac35d75a4a56",
-    alt: "Betterscan",
-  },
-  {
-    id: "mywatcher-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fmywatcher.png?alt=media&token=e13ff983-2def-4e6c-ab8d-cf0aa894ddfc",
-    alt: "MyWatcher",
-  },
-  {
-    id: "sofan-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fsofan.svg?alt=media&token=bd2ffac3-8c87-4735-b69f-7c71e5254cc2",
-    alt: "Sofan",
+    id: "certik",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fcertik.svg?alt=media&token=0100459c-9656-4057-a77b-3cb9677dccb8",
+    alt: "Certik",
   },
   {
     id: "lux-logo",
@@ -66,19 +56,9 @@ export const logosData: LogoData[] = [
     alt: "Html agency",
   },
   {
-    id: "betterscan-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fbetterscanlogotext.svg?alt=media&token=e719a4f5-1a3e-4975-b7ff-ac35d75a4a56",
-    alt: "Betterscan",
-  },
-  {
-    id: "mywatcher-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fmywatcher.png?alt=media&token=e13ff983-2def-4e6c-ab8d-cf0aa894ddfc",
-    alt: "MyWatcher",
-  },
-  {
-    id: "sofan-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fsofan.svg?alt=media&token=bd2ffac3-8c87-4735-b69f-7c71e5254cc2",
-    alt: "Sofan",
+    id: "certik",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fcertik.svg?alt=media&token=0100459c-9656-4057-a77b-3cb9677dccb8",
+    alt: "Certik",
   },
   {
     id: "lux-logo",
