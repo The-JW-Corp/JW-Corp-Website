@@ -1,13 +1,21 @@
+.carousel-component-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .carousel-container {
   /* background-color: red; */
   height: 80vh;
   width: 100%;
+width: 95vw;
+max-width: 95vw;
+
   /* max-width: 96vw; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden;
 }
 .carousel-wrap {
   overflow: visible;
@@ -144,7 +152,7 @@
     padding: 8px;
     font-size: 14px;
   }
-  .carousel-description-item{
+  .carousel-description-item {
     width: 350px;
     font-size: 12px;
   }
