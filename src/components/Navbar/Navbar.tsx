@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ handlingLangage, checkDomain }) => {
           className="navbar-contact-us"
           style={
             displayNotification
-              ? {
+                ? {
                   animation: "jellow 2s ease 0s 1 normal forwards",
                 }
               : {}

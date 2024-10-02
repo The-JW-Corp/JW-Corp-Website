@@ -26,7 +26,6 @@ function Home({ langageState }) {
       const response = await fetch("https://api.ipify.org?format=json");
       const data = await response.json();
       setUserIpAddressFromLinkedin(data?.ip);
-      // console.log('IP address retrieved:', data.ip);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -79,13 +78,11 @@ function Home({ langageState }) {
        <NotreMission langageState={langageState} />
        <Cta langageState={langageState} /> 
       <Carousel langageState={langageState} />
-
       <OurTeam />
       <NosValeurs langageState={langageState} />
       <Calendly urlEnd={urlEnd} docRefFromHomeState={docRefFromHomeState} />
       <Google langageState={langageState} />
       <Footer langageState={langageState} />
-
       <AnimationsComponent langageState={langageState} />
     </>
   );
