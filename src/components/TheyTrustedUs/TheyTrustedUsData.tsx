@@ -11,8 +11,13 @@ export const logosData: LogoData[] = [
     alt: "Certik",
   },
   {
+    id: "hacken",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fhacken.svg?alt=media&token=00a2b736-edc3-4b37-b4ef-52601c941b32",
+    alt: "Hacken",
+  },
+  {
     id: "lux-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Flogo-lux-icon.png?alt=media&token=99e1de68-baf1-40f1-a79a-4ed04f8697d0",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Ftheluxcollective_logo.jpeg?alt=media&token=7b760104-fa76-461f-ab6b-ee13472adec2",
     alt: "Lux group",
   },
   {
@@ -61,8 +66,13 @@ export const logosData: LogoData[] = [
     alt: "Certik",
   },
   {
+    id: "hacken",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Fhacken.svg?alt=media&token=00a2b736-edc3-4b37-b4ef-52601c941b32",
+    alt: "Hacken",
+  },
+  {
     id: "lux-logo",
-    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Flogo-lux-icon.png?alt=media&token=99e1de68-baf1-40f1-a79a-4ed04f8697d0",
+    src: "https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/partners-logo%2Ftheluxcollective_logo.jpeg?alt=media&token=7b760104-fa76-461f-ab6b-ee13472adec2",
     alt: "Lux group",
   },
   {

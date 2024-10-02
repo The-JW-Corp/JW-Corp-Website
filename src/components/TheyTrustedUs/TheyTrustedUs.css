@@ -5,30 +5,6 @@
   white-space: nowrap;
   position: relative;
   height: 200px;
-  /* margin-top: 50px; */
-}
-.they-trusted-us-element{
-  /* height: fit-content; */
-  height: 150px;
-  /* background-color: red; */
-}
-.they-trusted-us-title {
-  font-size: 2.5em;
-  font-weight: 800;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
-.they-trusted-us-container:before,
-.they-trusted-us-container:after {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  z-index: 2;
-  background: linear-gradient(to right, #2b2b2b 0%, rgba(255, 255, 255, 0) 35%);
 }
 
 .they-trusted-us-logo-container {
@@ -36,10 +12,13 @@
   top: 25px;
   display: flex;
   justify-content: center;
-  animation: slide 35s linear infinite;
+  align-items: center;
+  width: max-content;
+  animation: scroll 20s linear infinite;
 }
 
-.they-trusted-us-logo-container > div {
+.they-trusted-us-element {
+  height: 150px;
   margin: 0 30px;
   display: flex;
   align-items: center;
@@ -48,55 +27,86 @@
 .they-trusted-us-logo-container img {
   height: auto;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* @media (max-width: 800px) {
+  .they-trusted-us-container {
+    height: 150px;
+  }
+
+  .they-trusted-us-element {
+    margin: 0 15px;
+    max-width: 150px;
+    justify-content: center;
+  }
+} */
+
 #betterscan-logo {
   height: 20px;
 }
+
 #mywatcher-logo {
   height: 25px;
 }
+
 #certik {
   height: 35px;
 }
-#lux-logo{
-  height: 150px;
+#hacken{
+  height: 55px;
+  filter: invert(1);
 }
+#lux-logo {
+  height: 85px;
+  border-radius: 10px;
+}
+
 #metalyde-logo {
   height: 70px;
   border-radius: 10px;
 }
+
 #global-expertise-logo {
   height: 70px;
 }
-#cergy{
+
+#cergy {
   height: 70px;
 }
-#frenchtechmy{
+
+#frenchtechmy {
   height: 90px;
 }
+
 #republike-logo {
   height: 25px;
 }
+
 #harbor-logo {
   height: 70px;
   border-radius: 10px;
 }
+
 #la-capsule-logo {
   height: 55px;
 }
+
 #html-agency-logo {
   height: 35px;
 }
-#masverse{
+
+#masverse {
   height: 35px;
 }
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
+
 @media (max-width: 800px) {
   .they-trusted-us-container {
     height: 150px;
@@ -105,40 +115,60 @@
     top: 0px;
   }
   .they-trusted-us-logo-container > div {
-    margin: 0 15px;
+    margin: 0 10px;
     max-width: 150px;
     justify-content: center;
   }
-  #betterscan-logo {
-    height:20px ;
+
+  #lux-logo {
+    height: 45px;
+    border-radius: 10px;
+  }
+  #certik{
+    height: 25px;
+  }
+  #hacken {
+    height: 35px;
   }
   #mywatcher-logo {
-    height: calc(25px - 0%) ;
+    height: 25px;
   }
+
   #sofan-logo {
-    height: calc(25px - 5%) ;
+    height: 25px;
   }
-  #cergy{
+
+  #cergy {
     height: 40px;
   }
+  #masverse {
+    height: 20px;
+  }
   #metalyde-logo {
-    height: calc(70px - 5%) ;
+    height: 50px;
     border-radius: 10px;
   }
+
   #global-expertise-logo {
-    height: calc(70px - 5%) ;
+    height: 70px;
+  }
+  #frenchtechmy {
+    height: 70px;
   }
   #republike-logo {
-    height: calc(25px - 7.5%) ;
+    height: 10px;
   }
+
   #harbor-logo {
-    height: calc(70px - 5%) ;
+    height: 50px;
     border-radius: 10px;
   }
+
   #la-capsule-logo {
-    height: calc(55px - 5%) ;
+    height: 35px;
   }
+
   #html-agency-logo {
-    height: calc(35px - 5%) ;
+    height: 20px;
   }
 }
