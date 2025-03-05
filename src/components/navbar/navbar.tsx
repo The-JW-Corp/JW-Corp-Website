@@ -44,7 +44,7 @@ function Navbar() {
       <div
         className={cn(
           "w-[80%] mx-4 h-[70px] justify-between flex items-center rounded-[100px] px-4 py-3",
-          "bg-[rgba(255,255,255,0.1)]",
+          "bg-[rgba(255,255,255,0.1)] backdrop-blur-md",
           "transition-transform duration-300 ease-in-out",
           isNavbarVisible ? "translate-y-0" : "-translate-y-32"
         )}

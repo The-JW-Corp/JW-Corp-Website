@@ -77,9 +77,13 @@ const config: Config = {
           letterSpacing: '-3%',
           fontWeight: '500',
         }],
-        'h2-regular': ['42px', {
+        'h2-medium': ['42px', {
           lineHeight: '51.66px',
           letterSpacing: '-3%',
+          fontWeight: '600',
+        }],
+        'body-large': ['18px', {
+          lineHeight: '22px',
           fontWeight: '400',
         }],
         'body': ['16px', {
