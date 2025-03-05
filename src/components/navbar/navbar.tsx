@@ -40,10 +40,10 @@ function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <div className="w-full flex justify-center h-16">
+    <div className="w-full flex justify-center h-16 fixed z-50 top-8">
       <div
         className={cn(
-          "w-[80%] fixed top-9 mx-4 h-[70px] justify-between flex items-center rounded-[100px] px-4 py-3",
+          "w-[80%] mx-4 h-[70px] justify-between flex items-center rounded-[100px] px-4 py-3",
           "bg-[rgba(255,255,255,0.1)]",
           "transition-transform duration-300 ease-in-out",
           isNavbarVisible ? "translate-y-0" : "-translate-y-32"
@@ -61,7 +61,7 @@ function Navbar() {
           {links.map((link, index) => (
             <li
               key={index}
-              className="hover:opacity-70 hover:transition-opacity duration-300"
+              className="text-body-medium cursor-pointer hover:opacity-70 hover:transition-opacity duration-300"
             >
               <Link href={link.href}>
                 <AnimatedText delay={index * 0.15}>{link.title}</AnimatedText>

@@ -88,7 +88,7 @@ const config: Config = {
         }],
         'body-medium': ['16px', {
           lineHeight: '19.68px',
-          fontWeight: '500',
+          fontWeight: '600',
         }],
       },
     },

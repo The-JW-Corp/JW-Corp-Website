@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
-
+import AnimatedCursor from "react-animated-cursor";
 const clashDisplay = localFont({
   src: "../../public/ClashDisplay-Regular.otf",
   variable: "--font-clash",
@@ -25,12 +25,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${clashDisplay.variable} ${geistMono.variable} antialiased font-sans`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <AnimatedCursor
+          innerSize={18}
+          outerSize={18}
+          color="255,255,255"
+          // color="230, 112, 17"
+          outerAlpha={0.4}
+          innerScale={1.4}
+          outerScale={10}
+          clickables={[
+            "a",
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            "label[for]",
+            "select",
+            "textarea",
+            "button",
+            ".link",
+          ]}
+        />
+        <body
+          className={`${clashDisplay.variable} ${geistMono.variable} antialiased font-sans`}
+        >
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
