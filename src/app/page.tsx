@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar/navbar";
 import Hero from "../components/hero";
 import KeyMetrics from "../components/key-metrics";
+import OurServices from "../components/our-services";
 export default function Home() {
   return (
     <>
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="w-[80%] max-w-[1200px]">
           <Hero />
           <KeyMetrics />
+          <OurServices />
           <div className="h-[100dvh]"></div>
         </div>
       </div>

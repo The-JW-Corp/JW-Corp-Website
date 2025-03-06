@@ -89,16 +89,16 @@ function KeyMetrics() {
       description: "across DeFi, DAOs & startups",
     },
     {
-      title: "5 blockchains",
-      description: "across DeFi, DAOs & startups",
+      title: "Trusted",
+      description: " by Certik, Hacken, FinPR & more",
     },
     {
       title: "Millions secured",
       description: "in smart contract volume",
     },
     {
-      title: "Trusted",
-      description: " by Certik, Hacken, FinPR & more",
+      title: "5 blockchains",
+      description: "across DeFi, DAOs & startups",
     },
   ];
 
@@ -121,7 +121,7 @@ function KeyMetrics() {
   }, [isInView, hasTriggeredAnimation]);
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="h-[100dvh] flex flex-col justify-center gap-12">
       <div className="w-full flex justify-between">
         <div className="text-h2-medium">
           Technical excellence meets real Web3 ecosystem access.
