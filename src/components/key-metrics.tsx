@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { memo, useRef, useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const AnimatedText = dynamic(() => import("./ui/animated-text"), {
   ssr: false,
@@ -14,13 +15,27 @@ const MetricCard = memo(function MetricCard({
   metric,
   delay,
   isInViewport,
+  index,
 }: {
   metric: { title: string; description: string };
   delay: { title: number; description: number };
   isInViewport: boolean;
+  index: number;
 }) {
   return (
-    <div className="w-1/5">
+    <motion.div
+      className="w-1/5"
+      initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+      whileInView={{
+        clipPath: "inset(0% 0% 0% 0%)",
+        transition: {
+          duration: 0.8,
+          delay: index * 0.1,
+          ease: [0.16, 1, 0.3, 1],
+        },
+      }}
+      viewport={{ once: true, margin: "-2.5% 0px" }}
+    >
       <div
         className={cn(
           "flex flex-col w-full h-[300px] justify-end py-12 px-6 rounded-radius-10 relative",
@@ -28,30 +43,38 @@ const MetricCard = memo(function MetricCard({
           "after:content-[''] after:absolute after:inset-[1px] after:rounded-[calc(theme(borderRadius.radius-10)-1px)] after:bg-background after:-z-[5]"
         )}
       >
-        {isInViewport && (
-          <>
-            <div className="text-body-large-medium">
-              <AnimatedText
-                delay={delay.title}
-                once={false}
-                animationType="reveal"
-              >
-                {metric.title}
-              </AnimatedText>
-            </div>
-            <div className="text-body-regular">
-              <AnimatedText
-                delay={delay.description}
-                once={false}
-                animationType="reveal"
-              >
-                {metric.description}
-              </AnimatedText>
-            </div>
-          </>
-        )}
+        <>
+          <div
+            className={cn(
+              "text-body-large-medium",
+              isInViewport ? "visible" : "invisible"
+            )}
+          >
+            <AnimatedText
+              delay={delay.title}
+              once={false}
+              animationType="reveal"
+            >
+              {metric.title}
+            </AnimatedText>
+          </div>
+          <div
+            className={cn(
+              "text-body-regular",
+              isInViewport ? "visible" : "invisible"
+            )}
+          >
+            <AnimatedText
+              delay={delay.description}
+              once={false}
+              animationType="reveal"
+            >
+              {metric.description}
+            </AnimatedText>
+          </div>
+        </>
       </div>
-    </div>
+    </motion.div>
   );
 });
 
@@ -87,11 +110,9 @@ function KeyMetrics() {
     };
   });
 
-
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   const [hasTriggeredAnimation, setHasTriggeredAnimation] = useState(false);
-
 
   useEffect(() => {
     if (isInView && !hasTriggeredAnimation) {
@@ -119,6 +140,7 @@ function KeyMetrics() {
             metric={metric}
             delay={delays[index]}
             isInViewport={hasTriggeredAnimation}
+            index={index}
           />
         ))}
       </div>
