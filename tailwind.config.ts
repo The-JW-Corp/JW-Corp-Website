@@ -33,6 +33,7 @@ const config: Config = {
       },
       borderRadius: {
         "radius-8": "8px",
+        "radius-10": "10px",
         "radius-60": "60px",
         "radius-100": "100px",
       },
@@ -82,8 +83,22 @@ const config: Config = {
           letterSpacing: '-3%',
           fontWeight: '600',
         }],
-        'body-large': ['18px', {
-          lineHeight: '22px',
+        'h3': ['32px', {
+          lineHeight: '39.2px',
+          letterSpacing: '-3%',
+          fontWeight: '500',
+        }],
+        'h3-medium': ['32px', {
+          lineHeight: '39.2px',
+          letterSpacing: '-3%',
+          fontWeight: '600',
+        }],
+        'body-large-medium': ['20px', {
+          lineHeight: '21.6px',
+          fontWeight: '600',
+        }],
+        'body-large-regular': ['20px', {
+          lineHeight: '21.6px',
           fontWeight: '400',
         }],
         'body': ['16px', {

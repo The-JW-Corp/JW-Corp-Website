@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Navbar />
       <div className="w-100dvw flex justify-center">
-        <div className="w-[80%]">
+        <div className="w-[80%] max-w-[1200px]">
           <Hero />
           <KeyMetrics />
           <div className="h-[100dvh]"></div>

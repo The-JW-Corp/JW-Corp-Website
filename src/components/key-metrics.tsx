@@ -1,3 +1,60 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { memo, useRef, useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import { useInView } from "framer-motion";
+
+const AnimatedText = dynamic(() => import("./ui/animated-text"), {
+  ssr: false,
+  loading: () => <div className="opacity-0"></div>,
+});
+
+const MetricCard = memo(function MetricCard({
+  metric,
+  delay,
+  isInViewport,
+}: {
+  metric: { title: string; description: string };
+  delay: { title: number; description: number };
+  isInViewport: boolean;
+}) {
+  return (
+    <div className="w-1/5">
+      <div
+        className={cn(
+          "flex flex-col w-full h-[300px] justify-end py-12 px-6 rounded-radius-10 relative",
+          "before:content-[''] before:absolute before:inset-0 before:rounded-radius-10 before:bg-gradient-to-bl before:from-white before:to-transparent before:-z-10",
+          "after:content-[''] after:absolute after:inset-[1px] after:rounded-[calc(theme(borderRadius.radius-10)-1px)] after:bg-background after:-z-[5]"
+        )}
+      >
+        {isInViewport && (
+          <>
+            <div className="text-body-large-medium">
+              <AnimatedText
+                delay={delay.title}
+                once={false}
+                animationType="reveal"
+              >
+                {metric.title}
+              </AnimatedText>
+            </div>
+            <div className="text-body-regular">
+              <AnimatedText
+                delay={delay.description}
+                once={false}
+                animationType="reveal"
+              >
+                {metric.description}
+              </AnimatedText>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+});
+
 function KeyMetrics() {
   const keyMetrics = [
     {
@@ -21,8 +78,29 @@ function KeyMetrics() {
       description: " by Certik, Hacken, FinPR & more",
     },
   ];
+
+  const delays = keyMetrics.map((_, index) => {
+    const baseDelay = index * 0.45;
+    return {
+      title: baseDelay,
+      description: baseDelay + 0.3,
+    };
+  });
+
+
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+  const [hasTriggeredAnimation, setHasTriggeredAnimation] = useState(false);
+
+
+  useEffect(() => {
+    if (isInView && !hasTriggeredAnimation) {
+      setHasTriggeredAnimation(true);
+    }
+  }, [isInView, hasTriggeredAnimation]);
+
   return (
-    <div className="flex gap-12">
+    <div className="flex flex-col gap-12">
       <div className="w-full flex justify-between">
         <div className="text-h2-medium">
           Technical excellence meets real Web3 ecosystem access.
@@ -33,18 +111,19 @@ function KeyMetrics() {
           production-ready blockchain solutions.
         </div>
       </div>
-      <div className="w-full">
-        <div className="">
-          {keyMetrics.map((metric, index) => (
-            <div key={index} className="">
-              <div className="">{metric.title}</div>
-              <div className="">{metric.description}</div>
-            </div>
-          ))}
-        </div>
+
+      <div ref={containerRef} className="w-full flex justify-between gap-4">
+        {keyMetrics.map((metric, index) => (
+          <MetricCard
+            key={index}
+            metric={metric}
+            delay={delays[index]}
+            isInViewport={hasTriggeredAnimation}
+          />
+        ))}
       </div>
     </div>
   );
 }
 
-export default KeyMetrics;
+export default memo(KeyMetrics);
