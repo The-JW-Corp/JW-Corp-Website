@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar/navbar";
 import Hero from "../components/hero";
 import KeyMetrics from "../components/key-metrics";
-import OurServices from "../components/our-services";
+import OurServices from "../components/our-services/index";
 export default function Home() {
   return (
     <>

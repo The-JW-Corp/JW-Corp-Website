@@ -34,7 +34,7 @@ const MetricCard = memo(function MetricCard({
           ease: [0.16, 1, 0.3, 1],
         },
       }}
-      viewport={{ once: true, margin: "-2.5% 0px" }}
+      viewport={{ once: false, margin: "-2.5% 0px" }}
     >
       <div
         className={cn(

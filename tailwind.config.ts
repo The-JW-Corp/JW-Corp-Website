@@ -17,7 +17,7 @@ const config: Config = {
           "light-2": "var(--primary-light-2)",
         },
         white: {
-          DEFAULT: "var(--white-color)",
+          DEFAULT: "#FFFFFF",
         },
         gray: {
           "3": "var(--gray-3)",
