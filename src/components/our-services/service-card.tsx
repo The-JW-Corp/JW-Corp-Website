@@ -1,9 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
 
 export interface ServiceCardProps {
   title: string;
@@ -11,8 +10,8 @@ export interface ServiceCardProps {
   imageUrl: string;
   width: "w-3/5" | "w-2/5";
   motionProps: {
-    y: any;
-    scale: any;
+    y: MotionValue<string>;
+    scale: MotionValue<number>;
   };
 }
 
