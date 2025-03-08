@@ -2,7 +2,7 @@ import Navbar from "../components/navbar/navbar";
 import Hero from "../components/hero";
 import KeyMetrics from "../components/key-metrics";
 import OurServices from "../components/our-services/index";
-import CaseStudies from "../components/case-studies";
+import CaseStudies from "../components/case-studies/case-studies";
 export default function Home() {
   return (
     <>

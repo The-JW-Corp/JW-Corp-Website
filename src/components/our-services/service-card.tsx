@@ -56,7 +56,7 @@ export default function ServiceCard({
           >
             Learn more
             <Image
-              src="assets/icons/right-arrow.svg"
+              src="assets/icons/right-arrow-violet.svg"
               width={16}
               height={16}
               alt="right-arrow"
