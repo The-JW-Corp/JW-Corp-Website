@@ -41,7 +41,7 @@ function CaseStudies() {
           className="flex gap-[2vw]"
           initial={false}
           animate={{
-            x: `calc(40% - ${offset}vw - ${itemWidth / 2}vw)`,
+            x: `calc(50% - ${offset}vw - ${itemWidth / 2}vw)`,
           }}
           transition={{
             type: "spring",
@@ -111,7 +111,7 @@ function CaseStudies() {
             <button
               onClick={prevCase}
               className={cn(
-                "flex justify-center items-center",
+                "flex justify-center items-center select-none",
                 "rounded-radius-100 w-[50px] bg-primary p-3",
                 "hover:opacity-80 transition-opacity duration-300"
               )}
@@ -126,7 +126,7 @@ function CaseStudies() {
             <button
               onClick={nextCase}
               className={cn(
-                "flex justify-center right-center",
+                "flex justify-center right-center select-none",
                 "rounded-radius-100 w-[50px] bg-primary p-3",
                 "hover:opacity-80 transition-opacity duration-300"
               )}

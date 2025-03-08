@@ -15,6 +15,7 @@ const config: Config = {
           DEFAULT: "var(--primary-color)",
           alt: "var(--primary-alt)",
           "light-2": "var(--primary-light-2)",
+          dark: "var(--primary-dark)",
         },
         white: {
           DEFAULT: "#FFFFFF",
@@ -151,6 +152,13 @@ const config: Config = {
           {
             lineHeight: "19.68px",
             fontWeight: "600",
+          },
+        ],
+        "body-small": [
+          "14px",
+          {
+            lineHeight: "17.6px",
+            fontWeight: "400",
           },
         ],
       },
