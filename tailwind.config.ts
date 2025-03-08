@@ -33,6 +33,7 @@ const config: Config = {
         },
       },
       borderRadius: {
+        "radius-6": "6px",
         "radius-8": "8px",
         "radius-10": "10px",
         "radius-60": "60px",
