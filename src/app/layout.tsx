@@ -50,6 +50,7 @@ export default function RootLayout({
               "textarea",
               "button",
               ".link",
+              ".clickable"
             ]}
           />
           {children}

@@ -5,6 +5,11 @@ export interface TeamMember {
   title: string;
   description: string;
   imageUrl: string;
+  socials: {
+    linkedin?: string;
+    telegram?: string;
+    email?: string;
+  };
 }
 
 export const teamData: TeamMember[] = [
@@ -16,15 +21,25 @@ export const teamData: TeamMember[] = [
     description:
       "Solidity expert, building secure & scalable blockchain protocols.",
     imageUrl: "/assets/rami.jpg",
+    socials: {
+      linkedin: "https://linkedin.com/in/matheo",
+      telegram: "https://t.me/matheo",
+      email: "matheo@example.com",
+    },
   },
   {
-    id: "alexandra",
-    name: "Alexandra",
-    role: "Chief Technology Officer",
+    id: "rami",
+    name: "Rami",
+    role: "Founder",
     title: "Blockchain Architect",
     description:
       "Former Ethereum Foundation researcher with 7+ years in Web3 development.",
     imageUrl: "/assets/rami.jpg",
+    socials: {
+      linkedin: "https://linkedin.com/in/alexandra",
+      telegram: "https://t.me/alexandra",
+      email: "alexandra@example.com",
+    },
   },
   {
     id: "nicolas",
@@ -34,6 +49,11 @@ export const teamData: TeamMember[] = [
     description:
       "JavaScript wizard specializing in decentralized applications and tooling.",
     imageUrl: "/assets/rami.jpg",
+    socials: {
+      linkedin: "https://linkedin.com/in/nicolas",
+      telegram: "https://t.me/nicolas",
+      email: "nicolas@example.com",
+    },
   },
   {
     id: "elena",
@@ -43,6 +63,11 @@ export const teamData: TeamMember[] = [
     description:
       "Creating intuitive interfaces for complex blockchain applications.",
     imageUrl: "/assets/rami.jpg",
+    socials: {
+      linkedin: "https://linkedin.com/in/elena",
+      telegram: "https://t.me/elena",
+      email: "elena@example.com",
+    },
   },
 ];
 
