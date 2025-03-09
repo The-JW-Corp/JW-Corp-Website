@@ -1,5 +1,7 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { Particles } from "./particles";
 function hero() {
   return (
     <>
@@ -30,6 +32,14 @@ function hero() {
             </Button>
           </div>
         </div>
+        <Particles
+          className="absolute inset-0"
+          quantity={100}
+          ease={80}
+          // color={color}
+          color="#ffffff"
+          refresh
+        />
       </div>
     </>
   );

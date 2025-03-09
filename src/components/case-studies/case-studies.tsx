@@ -34,7 +34,6 @@ function CaseStudies() {
         scalability, security, or user adoption. Here are some of our most
         impactful case studies.
       </div>
-
       {/* Carousel container */}
       <div className="relative w-full overflow-hidden px-4 py-8">
         <motion.div
@@ -59,13 +58,21 @@ function CaseStudies() {
               }}
               transition={{ duration: 0.3 }}
               className={cn(
-                "min-w-[46vw] p-14 flex h-[500px] justify-end flex-col rounded-radius-10 border-r-1",
-                "gap-4 border-white relative overflow-hidden before:content-[''] before:absolute before:inset-0",
-                "before:bg-cover before:bg-center before:opacity-40 before:-z-10 before:bg-[url('/assets/nobrainer.png')]"
+                "min-w-[46vw] px-8 py-4 flex h-[500px] justify-end flex-col rounded-radius-10 border-r-1",
+                "gap-4 border-white relative overflow-hidden"
               )}
             >
+              <div
+                className="absolute inset-0 -z-10 bg-cover bg-center opacity-40"
+                style={{ backgroundImage: `url(${study.backgroundUrl})` }}
+              />
               <div>
                 <Image
+                  className={
+                    study.id === "lux" || study.id === "republike"
+                      ? "w-14 rounded-radius-8"
+                      : ""
+                  }
                   src={study.logoUrl}
                   alt={`${study.title}-logo`}
                   width={120}

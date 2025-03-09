@@ -162,6 +162,13 @@ const config: Config = {
             fontWeight: "400",
           },
         ],
+        "body-extra-small": [
+          "12px",
+          {
+            lineHeight: "15.6px",
+            fontWeight: "400",
+          },
+        ],
       },
     },
   },

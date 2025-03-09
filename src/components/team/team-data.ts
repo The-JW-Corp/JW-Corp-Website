@@ -3,6 +3,7 @@ export interface TeamMember {
   name: string;
   role: string;
   title: string;
+  credentials?: string;
   description: string;
   imageUrl: string;
   socials: {
@@ -19,54 +20,82 @@ export const teamData: TeamMember[] = [
     role: "Founder",
     title: "Full-Stack Smart Contract Developer",
     description:
-      "Solidity expert, building secure & scalable blockchain protocols.",
+      "Smartcontracts expert, building secure & scalable web3 applications on EVM & Solana chains",
     imageUrl: "/assets/rami.jpg",
     socials: {
       linkedin: "https://linkedin.com/in/matheo",
-      telegram: "https://t.me/matheo",
-      email: "matheo@example.com",
+      telegram: "https://t.me/JW_Matheo",
+      email: "matheo@jwcorp.fr",
     },
   },
   {
     id: "rami",
     name: "Rami",
     role: "Founder",
-    title: "Blockchain Architect",
-    description:
-      "Former Ethereum Foundation researcher with 7+ years in Web3 development.",
+    title: "Developer, Web3 Advisor",
+    description: "",
     imageUrl: "/assets/rami.jpg",
     socials: {
-      linkedin: "https://linkedin.com/in/alexandra",
-      telegram: "https://t.me/alexandra",
-      email: "alexandra@example.com",
+      linkedin: "https://linkedin.com/in/rami-abdou1",
+      telegram: "https://t.me/JW_Rami",
+      email: "rami@jwcorp.fr",
     },
   },
   {
-    id: "nicolas",
-    name: "Nicolas",
-    role: "Lead Developer",
-    title: "Full-Stack Engineer",
+    id: "baptiste",
+    name: "Baptiste",
+    role: "",
+    title: "Blockchain engineer, audit",
+    credentials: "Ex CTO Nefture, Ex Curve Finance",
     description:
-      "JavaScript wizard specializing in decentralized applications and tooling.",
-    imageUrl: "/assets/rami.jpg",
+      "Full-stack architect specialized in EVM smart contracts and cross-chain solutions. Expert in Safe ecosystem, account abstraction, and Web3 backend development",
+    imageUrl: "/assets/baptiste.jpeg",
     socials: {
-      linkedin: "https://linkedin.com/in/nicolas",
-      telegram: "https://t.me/nicolas",
-      email: "nicolas@example.com",
+      linkedin: "https://www.linkedin.com/in/baptiste-florentin/",
+      telegram: "https://t.me/Pybast",
+      email: "baptiste@jwcorp.fr",
     },
   },
   {
-    id: "elena",
-    name: "Elena",
-    role: "Product Designer",
-    title: "UX/UI Specialist",
-    description:
-      "Creating intuitive interfaces for complex blockchain applications.",
-    imageUrl: "/assets/rami.jpg",
+    id: "daniel",
+    name: "Daniel",
+    role: "",
+    title: "Product Designer",
+    description: "",
+    imageUrl: "/assets/daniel.png",
+    socials: {
+      linkedin: "https://linkedin.com/in/rami-abdou1",
+      telegram: "https://t.me/JW_Rami",
+      email: "rami@jwcorp.fr",
+    },
+  },
+  {
+    id: "ismael",
+    name: "Ismael",
+    role: "",
+    credentials: "Ex Barclay, SNCF, Carrefour",
+    title:
+      "Senior Product Manager",
+    description: "10+ years of experience in retail & banking",
+    imageUrl: "/assets/ismael.jpeg",
+    socials: {
+      linkedin: "https://linkedin.com/in/ismael-alaoui",
+      telegram: "https://t.me/ismael",
+      email: "",
+    },
+  },
+  {
+    id: "jean-charles",
+    name: "Jean-Charles",
+    role: "Advisor",
+    title:
+      "Head of Staff Cube3 (French web3 Incubator) & Head of International Relations ESCE",
+    description: "",
+    imageUrl: "/assets/jean-charles.jpeg",
     socials: {
       linkedin: "https://linkedin.com/in/elena",
       telegram: "https://t.me/elena",
-      email: "elena@example.com",
+      email: "",
     },
   },
 ];
