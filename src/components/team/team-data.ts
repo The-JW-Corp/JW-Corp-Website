@@ -32,8 +32,9 @@ export const teamData: TeamMember[] = [
     id: "rami",
     name: "Rami",
     role: "Founder",
-    title: "Developer, Web3 Advisor",
-    description: "",
+    title: "Fullstack Developer, Web3 Advisor",
+    credentials: "Ex Banking, university professor",
+    description: "Fullstack developer, web3 advisor",
     imageUrl: "/assets/rami.jpg",
     socials: {
       linkedin: "https://linkedin.com/in/rami-abdou1",

@@ -49,12 +49,12 @@ function Navbar() {
           isNavbarVisible ? "translate-y-0" : "-translate-y-32"
         )}
       >
-        <div className="pl-3">
+        <div className="pl-2">
           <Image
-            src="https://firebasestorage.googleapis.com/v0/b/jw-corp.appspot.com/o/jwlogosolutionblanc.svg?alt=media&token=7c0af8d1-bdc2-4933-8911-2862ee8c33f7"
+            src="/assets/jwcorp.png"
             alt="logo"
-            width={100}
-            height={100}
+            width={80}
+            height={80}
           />
         </div>
         <ul className="flex gap-4">
