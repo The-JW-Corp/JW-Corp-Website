@@ -10,18 +10,18 @@ import { motion } from "framer-motion";
 function CaseStudies() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideWidth, setSlideWidth] = useState(46);
-  const [containerWidth, setContainerWidth] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const totalItems = caseStudiesData.length;
   const containerRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
-
+  const touchStartXRef = useRef<number | null>(null);
+  const touchEndXRef = useRef<number | null>(null);
+  
   useEffect(() => {
     const handleResize = () => {
       if (!containerRef.current) return;
       
       const containerWidth = containerRef.current.clientWidth;
-      setContainerWidth(containerWidth);
       
       const isMobileView = window.innerWidth < 768;
       setIsMobile(isMobileView);
@@ -50,11 +50,42 @@ function CaseStudies() {
     setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
   };
 
+  // Swipe handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+    touchEndXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartXRef.current || !touchEndXRef.current) return;
+    
+    const touchDiff = touchStartXRef.current - touchEndXRef.current;
+    const minSwipeDistance = 75; 
+    
+    if (touchDiff > minSwipeDistance) {
+      
+      nextCase();
+    } else if (touchDiff < -minSwipeDistance) {
+      
+      prevCase();
+    }
+    
+    
+    touchStartXRef.current = null;
+    touchEndXRef.current = null;
+  };
+
+  
   const getXPosition = () => {
     if (isMobile) {
-
+  
       return `calc(50% - (${currentIndex} * ${slideWidth}px) - (${slideWidth}px / 2))`;
     } else {
+      
       const gap = 2 * 16;
       const totalOffset = currentIndex * (slideWidth + gap);
       return `calc(50% - ${totalOffset}px - (${slideWidth}px / 2))`;
@@ -79,6 +110,9 @@ function CaseStudies() {
       <div 
         ref={containerRef}
         className="relative w-full overflow-hidden px-4 py-8"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <motion.div
           className={cn(
@@ -99,9 +133,7 @@ function CaseStudies() {
           {caseStudiesData.map((study, index) => (
             <motion.div
               key={study.id}
-              ref={(el: HTMLDivElement | null) => {
-                if (slideRefs.current) slideRefs.current[index] = el;
-              }}
+              ref={(el) => { slideRefs.current[index] = el; }}
               animate={{
                 scale: index === currentIndex ? 1 : 0.9,
                 opacity: index === currentIndex ? 1 : 0.5,
@@ -164,7 +196,6 @@ function CaseStudies() {
         </motion.div>
       </div>
 
-      {/* Navigation controls */}
       <div
         className={cn(
           "w-full flex justify-between gap-1",

@@ -63,7 +63,7 @@ export const teamData: TeamMember[] = [
     role: "",
     title: "Product Designer",
     description: "",
-    imageUrl: "/assets/daniel.png",
+    imageUrl: "/daniel.jpg",
     socials: {
       linkedin: "https://linkedin.com/in/rami-abdou1",
       telegram: "https://t.me/JW_Rami",

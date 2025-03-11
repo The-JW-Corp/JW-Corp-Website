@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Label from "../ui/label";
 import { cn } from "@/lib/utils";
 import { teamData } from "./team-data";
@@ -9,8 +9,19 @@ import Image from "next/image";
 
 function Team() {
   const [hoveredMemberId, setHoveredMemberId] = useState<string | null>(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+
+  useEffect(() => {
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleInteraction = (memberId: string) => {
+    if (isTouchDevice) {
+      setHoveredMemberId(hoveredMemberId === memberId ? null : memberId);
+    }
+  };
 
   return (
     <div
@@ -21,25 +32,15 @@ function Team() {
         <Label className="max-md:text-body-extra-small" size="small">
           Team
         </Label>
-        <div className={cn(
-            "text-h2-medium",
-            "max-md:text-body-large-medium"
-          )}
-        >
+        <div className="text-h2-medium max-md:text-body-large-medium">
           Meet the Experts Behind Your Next Web3 Project{" "}
         </div>
-        <div
-          className={cn(
-            "text-body-normal-regular",
-            "max-md:text-body-small"
-          )}
-        >
+        <div className="text-body-normal-regular max-md:text-body-small">
           A team of Web3-native developers, architects, and strategists turning
           ideas into reality.
         </div>
       </div>
       
-      {/* Utilisation d'une approche simplifiée pour la grille */}
       <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-md:gap-3">
         {teamData.map((member, index) => {
           const isHovered = hoveredMemberId === member.id;
@@ -54,9 +55,14 @@ function Team() {
                 delay: index * 0.15,
                 ease: "easeOut",
               }}
-              className="flex flex-col justify-end gap-1 p-[30px] h-[400px] max-md:h-[300px] rounded-radius-6 relative overflow-hidden w-full"
-              onHoverStart={() => setHoveredMemberId(member.id)}
-              onHoverEnd={() => setHoveredMemberId(null)}
+              className={cn(
+                "flex flex-col justify-end gap-1 p-[30px] h-[400px] rounded-radius-6 relative overflow-hidden w-full",
+                isTouchDevice ? "cursor-pointer" : "",
+                "max-md:h-[300px]"
+              )}
+              onClick={() => handleInteraction(member.id)}
+              onHoverStart={!isTouchDevice ? () => setHoveredMemberId(member.id) : undefined}
+              onHoverEnd={!isTouchDevice ? () => setHoveredMemberId(null) : undefined}
             >
               <div className="absolute inset-0 -z-10 overflow-hidden rounded-radius-6">
                 <motion.div
@@ -71,7 +77,6 @@ function Team() {
                 />
               </div>
 
-              {/* Information section */}
               <motion.div
                 className="flex flex-col gap-1"
                 initial={{ opacity: 1 }}
@@ -92,7 +97,6 @@ function Team() {
                 </div>
               </motion.div>
 
-              {/* Social links section */}
               <motion.div
                 className="absolute inset-0 flex flex-col items-center justify-end h-full w-full gap-6 p-6"
                 initial={{ opacity: 0, pointerEvents: "none" }}
@@ -111,6 +115,7 @@ function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center p-4 hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Image
                         src="/assets/icons/linkedin.svg"
@@ -127,6 +132,7 @@ function Team() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center p-4 hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Image
                         src="/assets/icons/telegram.svg"
@@ -141,6 +147,7 @@ function Team() {
                     <a
                       href={`mailto:${member.socials.email}`}
                       className="flex items-center p-4 hover:text-primary transition-colors"
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Image
                         src="/assets/icons/email.svg"
