@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Label from "../ui/label";
 import Image from "next/image";
@@ -9,7 +9,38 @@ import { motion } from "framer-motion";
 
 function CaseStudies() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(46);
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const totalItems = caseStudiesData.length;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (!containerRef.current) return;
+      
+      const containerWidth = containerRef.current.clientWidth;
+      setContainerWidth(containerWidth);
+      
+      const isMobileView = window.innerWidth < 768;
+      setIsMobile(isMobileView);
+      
+      if (isMobileView) {
+        setSlideWidth(containerWidth);
+      } else {
+        setSlideWidth(window.innerWidth * 0.46);
+      }
+    };
+    
+    handleResize();
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const nextCase = () => {
     setCurrentIndex((prev) => (prev + 1) % totalItems);
@@ -19,28 +50,44 @@ function CaseStudies() {
     setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
   };
 
-  const itemWidth = 46;
-  const gap = 2;
-  const offset = currentIndex * (itemWidth + gap);
+  const getXPosition = () => {
+    if (isMobile) {
+
+      return `calc(50% - (${currentIndex} * ${slideWidth}px) - (${slideWidth}px / 2))`;
+    } else {
+      const gap = 2 * 16;
+      const totalOffset = currentIndex * (slideWidth + gap);
+      return `calc(50% - ${totalOffset}px - (${slideWidth}px / 2))`;
+    }
+  };
 
   return (
     <div className="flex flex-col justify-center gap-4 h-[100dvh]">
-      <Label>Case Studies</Label>
-      <div className="text-h2-medium">
+      <Label className="max-md:text-body-extra-small" size="small">
+        Case Studies
+      </Label>
+      <div className="text-h2-medium max-md:text-body-large-medium">
         Built for Web3. Proven in Production.
       </div>
-      <div className="text-body-normal-regular">
+      <div className="text-body-normal-regular max-md:text-body-small">
         Every project we build solves a real problem in Web3—whether it&apos;s
         scalability, security, or user adoption. Here are some of our most
         impactful case studies.
       </div>
+      
       {/* Carousel container */}
-      <div className="relative w-full overflow-hidden px-4 py-8">
+      <div 
+        ref={containerRef}
+        className="relative w-full overflow-hidden px-4 py-8"
+      >
         <motion.div
-          className="flex gap-[2vw]"
+          className={cn(
+            "flex", 
+            isMobile ? "gap-0" : "gap-8"
+          )}
           initial={false}
           animate={{
-            x: `calc(50% - ${offset}vw - ${itemWidth / 2}vw)`,
+            x: getXPosition(),
           }}
           transition={{
             type: "spring",
@@ -52,14 +99,23 @@ function CaseStudies() {
           {caseStudiesData.map((study, index) => (
             <motion.div
               key={study.id}
+              ref={(el: HTMLDivElement | null) => {
+                if (slideRefs.current) slideRefs.current[index] = el;
+              }}
               animate={{
                 scale: index === currentIndex ? 1 : 0.9,
                 opacity: index === currentIndex ? 1 : 0.5,
               }}
               transition={{ duration: 0.3 }}
+              style={{
+                width: `${slideWidth}px`,
+                flexShrink: 0,
+              }}
               className={cn(
-                "min-w-[46vw] px-8 py-4 flex h-[500px] justify-end flex-col rounded-radius-10 border-r-1",
-                "gap-4 border-white relative overflow-hidden"
+                "py-4 flex h-[500px] justify-end flex-col rounded-radius-10 border-r-1",
+                "gap-4 border-white relative overflow-hidden",
+                "max-md:h-[350px]",
+                isMobile ? "px-4" : "px-8"
               )}
             >
               <div
@@ -71,7 +127,7 @@ function CaseStudies() {
                   className={
                     study.id === "lux" || study.id === "republike"
                       ? "w-14 rounded-radius-8"
-                      : ""
+                      : "max-md:w-10"
                   }
                   src={study.logoUrl}
                   alt={`${study.title}-logo`}
@@ -79,16 +135,26 @@ function CaseStudies() {
                   height={120}
                 />
               </div>
-              <div className={cn("text-h2-medium", "text-h3-medium")}>
+              <div className={cn("text-h2-medium", "max-lg:text-h3-medium", "max-md:text-body-large-medium")}>
                 {study.title}
                 <p className="text-body-normal-regular">{study.subtitle}</p>
               </div>
-              <p className={cn("text-body", "max-lg:text-body-small")}>
+              <p
+                className={cn(
+                  "text-body",
+                  "max-lg:text-body-small",
+                  "max-md:text-body-extra-small"
+                )}
+              >
                 {study.description}
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-wrap">
                 {study.technologies.map((tech) => (
-                  <Label className="" key={tech.id} size="small">
+                  <Label
+                    className="max-md:text-body-extra-small"
+                    key={tech.id}
+                    size="small"
+                  >
                     {tech.name}
                   </Label>
                 ))}

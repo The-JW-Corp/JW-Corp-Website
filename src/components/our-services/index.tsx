@@ -28,21 +28,31 @@ export default function OurServices() {
         <div className="flex flex-col items-center gap-4">
           <ServiceHeader />
           <div className="flex gap-2">
-            <Button href="#calendly" variant="primary" size="lg">
+            <Button
+              className="max-md:text-body-small max-md:px-4 max-md:py-[13px] max-md:h-fit"
+              href="#calendly"
+              variant="primary"
+              size="lg"
+            >
               Book a call
             </Button>
-            <Button href="https://t.me/jw_corp" variant="secondary" size="lg">
+            <Button
+              className="max-md:text-body-small max-md:px-4 max-md:py-3 max-md:h-fit"
+              href="https://t.me/jw_corp"
+              variant="secondary"
+              size="lg"
+            >
               Chat on Telegram
             </Button>
           </div>
         </div>
 
         <div className="w-full flex flex-col gap-4">
-          <div className="w-full flex gap-4">
+          <div className={cn("w-full flex gap-4", "max-md:flex-col")}>
             <ServiceCard {...servicesData[0]} motionProps={motionProps} />
             <ServiceCard {...servicesData[1]} motionProps={motionProps} />
           </div>
-          <div className="w-full flex gap-4">
+          <div className={cn("w-full flex gap-4", "max-md:flex-col")}>
             <ServiceCard {...servicesData[2]} motionProps={motionProps} />
             <ServiceCard {...servicesData[3]} motionProps={motionProps} />
           </div>

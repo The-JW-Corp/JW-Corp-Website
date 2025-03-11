@@ -126,7 +126,7 @@ function KeyMetrics() {
   }, [isInView, hasTriggeredAnimation]);
 
   return (
-    <div className="h-[100dvh] flex flex-col justify-center gap-12">
+    <div className="min-h-[100dvh] flex flex-col justify-center gap-12">
       <div className={cn("w-full flex justify-between", "max-md:flex-col max-md:gap-2")}>
         <div
           className={cn("text-h2-medium", "max-lg:text-h3 max-md:text-h3", 

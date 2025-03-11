@@ -40,6 +40,7 @@ interface ParticlesProps {
   vx?: number
   vy?: number
 }
+
 function hexToRgb(hex: string): number[] {
   hex = hex.replace("#", "")
 
@@ -76,31 +77,71 @@ const Particles: React.FC<ParticlesProps> = ({
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 })
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 })
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
+  const isTouchDevice = useRef(false)
+  const animationRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    isTouchDevice.current = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d")
     }
-    initCanvas()
-    animate()
-    window.addEventListener("resize", initCanvas)
+    
+    resizeCanvas()
+    setupParticles()
+    
+    if (!isTouchDevice.current) {
+      animationRef.current = requestAnimationFrame(animateDesktop)
+    } else {
 
-    return () => {
-      window.removeEventListener("resize", initCanvas)
+      animationRef.current = requestAnimationFrame(animateMobile)
     }
-  }, [color])
+    
+
+    const handleResize = () => {
+      resizeCanvas()
+      
+
+      if (!isTouchDevice.current) {
+        circles.current = []
+        setupParticles()
+      }
+    }
+    
+    window.addEventListener("resize", handleResize)
+    
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [color, refresh])
 
   useEffect(() => {
-    onMouseMove()
+    if (!isTouchDevice.current) {
+      onMouseMove()
+    }
   }, [mousePosition.x, mousePosition.y])
 
-  useEffect(() => {
-    initCanvas()
-  }, [refresh])
-
-  const initCanvas = () => {
-    resizeCanvas()
-    drawParticles()
+  const resizeCanvas = () => {
+    if (canvasContainerRef.current && canvasRef.current && context.current) {
+      canvasSize.current.w = canvasContainerRef.current.offsetWidth
+      canvasSize.current.h = canvasContainerRef.current.offsetHeight
+      canvasRef.current.width = canvasSize.current.w * dpr
+      canvasRef.current.height = canvasSize.current.h * dpr
+      canvasRef.current.style.width = `${canvasSize.current.w}px`
+      canvasRef.current.style.height = `${canvasSize.current.h}px`
+      context.current.scale(dpr, dpr)
+    }
   }
 
   const onMouseMove = () => {
@@ -130,20 +171,7 @@ const Particles: React.FC<ParticlesProps> = ({
     magnetism: number
   }
 
-  const resizeCanvas = () => {
-    if (canvasContainerRef.current && canvasRef.current && context.current) {
-      circles.current.length = 0
-      canvasSize.current.w = canvasContainerRef.current.offsetWidth
-      canvasSize.current.h = canvasContainerRef.current.offsetHeight
-      canvasRef.current.width = canvasSize.current.w * dpr
-      canvasRef.current.height = canvasSize.current.h * dpr
-      canvasRef.current.style.width = `${canvasSize.current.w}px`
-      canvasRef.current.style.height = `${canvasSize.current.h}px`
-      context.current.scale(dpr, dpr)
-    }
-  }
-
-  const circleParams = (): Circle => {
+  const createCircle = (): Circle => {
     const x = Math.floor(Math.random() * canvasSize.current.w)
     const y = Math.floor(Math.random() * canvasSize.current.h)
     const translateX = 0
@@ -197,11 +225,12 @@ const Particles: React.FC<ParticlesProps> = ({
     }
   }
 
-  const drawParticles = () => {
+  const setupParticles = () => {
     clearContext()
+    circles.current = [] // Clear existing particles
     const particleCount = quantity
     for (let i = 0; i < particleCount; i++) {
-      const circle = circleParams()
+      const circle = createCircle()
       drawCircle(circle)
     }
   }
@@ -218,15 +247,14 @@ const Particles: React.FC<ParticlesProps> = ({
     return remapped > 0 ? remapped : 0
   }
 
-  const animate = () => {
+  const animateDesktop = () => {
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
-      // Handle the alpha value
       const edge = [
-        circle.x + circle.translateX - circle.size, // distance from left edge
-        canvasSize.current.w - circle.x - circle.translateX - circle.size, // distance from right edge
-        circle.y + circle.translateY - circle.size, // distance from top edge
-        canvasSize.current.h - circle.y - circle.translateY - circle.size, // distance from bottom edge
+        circle.x + circle.translateX - circle.size,
+        canvasSize.current.w - circle.x - circle.translateX - circle.size,
+        circle.y + circle.translateY - circle.size,
+        canvasSize.current.h - circle.y - circle.translateY - circle.size,
       ]
       const closestEdge = edge.reduce((a, b) => Math.min(a, b))
       const remapClosestEdge = parseFloat(
@@ -242,6 +270,7 @@ const Particles: React.FC<ParticlesProps> = ({
       }
       circle.x += circle.dx + vx
       circle.y += circle.dy + vy
+      
       circle.translateX +=
         (mouse.current.x / (staticity / circle.magnetism) - circle.translateX) /
         ease
@@ -251,22 +280,43 @@ const Particles: React.FC<ParticlesProps> = ({
 
       drawCircle(circle, true)
 
-      // circle gets out of the canvas
       if (
         circle.x < -circle.size ||
         circle.x > canvasSize.current.w + circle.size ||
         circle.y < -circle.size ||
         circle.y > canvasSize.current.h + circle.size
       ) {
-        // remove the circle from the array
         circles.current.splice(i, 1)
-        // create a new circle
-        const newCircle = circleParams()
+        const newCircle = createCircle()
         drawCircle(newCircle)
-        // update the circle position
       }
     })
-    window.requestAnimationFrame(animate)
+    
+    animationRef.current = requestAnimationFrame(animateDesktop)
+  }
+
+
+  const animateMobile = () => {
+    clearContext()
+    circles.current.forEach((circle: Circle) => {
+      if (circle.alpha < circle.targetAlpha) {
+        circle.alpha += 0.02
+        if (circle.alpha > circle.targetAlpha) {
+          circle.alpha = circle.targetAlpha
+        }
+      }
+      
+      circle.x += circle.dx + vx
+      circle.y += circle.dy + vy
+      if (circle.x < -circle.size) circle.x = canvasSize.current.w + circle.size
+      if (circle.x > canvasSize.current.w + circle.size) circle.x = -circle.size
+      if (circle.y < -circle.size) circle.y = canvasSize.current.h + circle.size
+      if (circle.y > canvasSize.current.h + circle.size) circle.y = -circle.size
+      
+      drawCircle(circle, true)
+    })
+    
+    animationRef.current = requestAnimationFrame(animateMobile)
   }
 
   return (

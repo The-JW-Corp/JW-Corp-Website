@@ -27,7 +27,8 @@ export default function ServiceCard({
     <div
       className={cn(
         `${width} flex h-[570px] flex-col rounded-radius-10 border-r-1 border-white bg-white bg-opacity-[0.03] relative overflow-hidden`,
-        "max-lg:h-[350px]"
+        "max-lg:h-[350px]",
+        "max-md:w-full max-md:h-[250px]"
         // "md:h-[300px]"
       )}
     >
@@ -54,7 +55,7 @@ export default function ServiceCard({
       <div
         className={cn(
           "relative z-20 p-6 flex flex-col w-full h-full m-4 gap-2",
-          "md:p-0"
+          "max-md:flex max-md:p-0",
         )}
       >
         <div

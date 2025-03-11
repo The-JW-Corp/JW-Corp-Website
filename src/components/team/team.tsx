@@ -18,16 +18,29 @@ function Team() {
       className="min-h-[100dvh] flex flex-col justify-center gap-12"
     >
       <div className="flex flex-col gap-4">
-        <Label>Team</Label>
-        <div className="text-h2-medium">
+        <Label className="max-md:text-body-extra-small" size="small">
+          Team
+        </Label>
+        <div className={cn(
+            "text-h2-medium",
+            "max-md:text-body-large-medium"
+          )}
+        >
           Meet the Experts Behind Your Next Web3 Project{" "}
         </div>
-        <div className="text-body-normal-regular">
+        <div
+          className={cn(
+            "text-body-normal-regular",
+            "max-md:text-body-small"
+          )}
+        >
           A team of Web3-native developers, architects, and strategists turning
           ideas into reality.
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      
+      {/* Utilisation d'une approche simplifiée pour la grille */}
+      <div className="grid grid-cols-3 gap-4 max-md:grid-cols-1 max-md:gap-3">
         {teamData.map((member, index) => {
           const isHovered = hoveredMemberId === member.id;
 
@@ -41,9 +54,7 @@ function Team() {
                 delay: index * 0.15,
                 ease: "easeOut",
               }}
-              className={cn(
-                "flex flex-col justify-end gap-1 p-[30px] max-w-[386px] h-[400px] rounded-radius-6 relative overflow-hidden"
-              )}
+              className="flex flex-col justify-end gap-1 p-[30px] h-[400px] max-md:h-[300px] rounded-radius-6 relative overflow-hidden w-full"
               onHoverStart={() => setHoveredMemberId(member.id)}
               onHoverEnd={() => setHoveredMemberId(null)}
             >
@@ -67,17 +78,16 @@ function Team() {
                 animate={{ opacity: isHovered ? 0 : 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <div
-                  className={cn(
-                    "p-[10px] text-body-small w-fit text-primary",
-                    "rounded-radius-6"
-                  )}
-                >
+                <div className="p-[10px] text-body-small max-md:text-body-extra-small max-md:p-[6px] w-fit text-primary rounded-radius-6">
                   {member.role}
                 </div>
-                <div className="text-h3-medium">{member.name}</div>
-                <div className="text-body">{member.title}</div>
-                <div className="opacity-60 text-body-small">
+                <div className="text-h3-medium max-md:text-body-medium">
+                  {member.name}
+                </div>
+                <div className="text-body max-md:text-body-small">
+                  {member.title}
+                </div>
+                <div className="opacity-60 text-body-small max-md:text-body-extra-small">
                   {member.description}
                 </div>
               </motion.div>
