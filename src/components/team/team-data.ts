@@ -33,8 +33,10 @@ export const teamData: TeamMember[] = [
     name: "Rami",
     role: "Founder",
     title: "Fullstack Developer, Web3 Advisor",
-    credentials: "Ex Banking, university professor, crypto investor since 2017",
-    description: "Fullstack developer, web3 advisor",
+    credentials:
+      "Ex Banking, Ex university professor, crypto investor since 2017",
+    description:
+      "Gamification expert, building engaging web3 applications to optimize user engagement and retention",
     imageUrl: "/assets/rami.jpg",
     socials: {
       linkedin: "https://linkedin.com/in/rami-abdou1",
@@ -58,25 +60,55 @@ export const teamData: TeamMember[] = [
     },
   },
   {
+    id: "remi",
+    name: "Rémi",
+    role: "",
+    title: "Senior Full Stack Engineer",
+    credentials: "Ex Lead dev Total, Ex Aura(LVMH)",
+    description:
+      "Senior Web3 engineer specialized in Ethereum technologies and advanced web development. Over 7 years of experience as Lead Developer/CTO and two Masters in Computer Science.",
+    imageUrl: "/assets/remi.jpeg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/baptiste-florentin/",
+      telegram: "https://t.me/Pybast",
+      email: "baptiste@jwcorp.fr",
+    },
+  },
+  {
+    id: "eddy",
+    name: "Eddy",
+    role: "",
+    title: "Senior Full Stack Smartcontract Engineer",
+    credentials: "Ex Lead dev Total, Ex Aura(LVMH)",
+    description:
+      "+14y FullStack Engineer, +4y Blockchain Engineer, Skilled in .NET, Azure integrations, and CI/CD pipelines, delivering robust decentralized solutions and modern web architectures.",
+    imageUrl: "/assets/eddy.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/baptiste-florentin/",
+      telegram: "https://t.me/Pybast",
+      email: "baptiste@jwcorp.fr",
+    },
+  },
+  {
     id: "daniel",
     name: "Daniel",
     role: "",
     title: "Product Designer",
+    credentials: "Ex KlubX, ",
     description: "",
     imageUrl: "/daniel.jpg",
     socials: {
-      linkedin: "https://linkedin.com/in/rami-abdou1",
-      telegram: "https://t.me/JW_Rami",
-      email: "rami@jwcorp.fr",
+      linkedin: "https://www.linkedin.com/in/daniel-d-b8b90b23a/",
+      telegram: "https://t.me/don_don_01",
+      email: "daniel@jwcorp.fr",
     },
   },
   {
     id: "ismael",
     name: "Ismael",
-    role: "",
+    role: "Advisor",
     credentials: "Ex Barclay, SNCF, Carrefour",
-    title:
-      "Senior Product Manager",
+    title: "Senior Product Manager",
     description: "10+ years of experience in retail & banking",
     imageUrl: "/assets/ismael.jpeg",
     socials: {

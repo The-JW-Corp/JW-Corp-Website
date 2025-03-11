@@ -92,6 +92,9 @@ function Team() {
                 <div className="text-body max-md:text-body-small">
                   {member.title}
                 </div>
+                <div className="text-body max-md:text-body-small">
+                  {member.credentials}
+                </div>
                 <div className="opacity-60 text-body-small max-md:text-body-extra-small">
                   {member.description}
                 </div>
