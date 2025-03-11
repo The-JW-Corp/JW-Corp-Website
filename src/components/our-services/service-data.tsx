@@ -43,7 +43,7 @@ export const servicesData: ServiceDataItem[] = [
     imageUrl: "/elixir.jpg",
   },
   {
-    title: "Go-To-Market Strategy",
+    title: "Go-To-Market",
     description: (
       <>
         <p>

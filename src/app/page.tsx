@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Navbar />
       <div className="w-100dvw flex justify-center">
-        <div className="w-[80%] max-w-[1200px] flex flex-col gap-12">
+        <div className="w-[80%] max-w-[1400px] flex flex-col gap-12">
           <Hero />
           <KeyMetrics />
           <OurServices />

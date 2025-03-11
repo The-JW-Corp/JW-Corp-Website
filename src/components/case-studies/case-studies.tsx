@@ -79,14 +79,16 @@ function CaseStudies() {
                   height={120}
                 />
               </div>
-              <div className="text-h2-medium">
+              <div className={cn("text-h2-medium", "text-h3-medium")}>
                 {study.title}
                 <p className="text-body-normal-regular">{study.subtitle}</p>
               </div>
-              <p className="text-body">{study.description}</p>
+              <p className={cn("text-body", "max-lg:text-body-small")}>
+                {study.description}
+              </p>
               <div className="flex gap-2">
                 {study.technologies.map((tech) => (
-                  <Label key={tech.id} size="small">
+                  <Label className="" key={tech.id} size="small">
                     {tech.name}
                   </Label>
                 ))}
@@ -97,7 +99,12 @@ function CaseStudies() {
       </div>
 
       {/* Navigation controls */}
-      <div className="w-full flex justify-between gap-1">
+      <div
+        className={cn(
+          "w-full flex justify-between gap-1",
+          "max-md:flex-col max-md:gap-4 max-md:items-center"
+        )}
+      >
         <div className="flex gap-1">
           {caseStudiesData.map((_, idx) => (
             <div

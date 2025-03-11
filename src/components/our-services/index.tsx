@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import ServiceCard from "./service-card";
 import { servicesData } from "./service-data";
 import Label from "../ui/label";
+import { cn } from "@/lib/utils";
 export default function OurServices() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -19,8 +20,11 @@ export default function OurServices() {
   const motionProps = { y, scale };
 
   return (
-    <div ref={containerRef} className="relative min-h-[100dvh]">
-      <div className="flex flex-col gap-12">
+    <div
+      ref={containerRef}
+      className={cn("relative min-h-[100dvh]", "max-md:mt-12")}
+    >
+      <div className="flex flex-col gap-16">
         <div className="flex flex-col items-center gap-4">
           <ServiceHeader />
           <div className="flex gap-2">
@@ -51,11 +55,23 @@ export default function OurServices() {
 function ServiceHeader() {
   return (
     <>
-      <Label>Our services</Label>
-      <div className="text-h2-medium max-w-[600px] text-center">
+      <Label className="max-md:text-body-extra-small" size="small">
+        Our services
+      </Label>
+      <div
+        className={cn(
+          "text-h2-medium max-w-[600px] text-center",
+          "max-md:text-body-large-medium"
+        )}
+      >
         Building, Designing, and Scaling Web3 Products.
       </div>
-      <div className="text-white/80 text-body-large-regular max-w-[600px] text-center">
+      <div
+        className={cn(
+          "text-white/80 text-body-large-regular max-w-[600px] text-center",
+          "max-md:text-body-small"
+        )}
+      >
         From full-stack development to high-level advisory and product design,
         we ensure your project is built for long-term success.
       </div>

@@ -70,7 +70,7 @@ export default function AnimatedText({
     return (
       <div 
         ref={ref} 
-        className={cn("text-inherit whitespace-nowrap overflow-hidden", className)}
+        className={cn("text-inherit overflow-hidden", className)}
       >
         {lines.map((line, lineIndex) => (
           <div key={lineIndex} className="overflow-hidden">
@@ -101,7 +101,7 @@ export default function AnimatedText({
   return (
     <div 
       ref={ref} 
-      className={cn("text-inherit whitespace-nowrap", className)}
+      className={cn("text-inherit", className)}
     >
       {lines.map((line, lineIndex) => (
         <motion.div

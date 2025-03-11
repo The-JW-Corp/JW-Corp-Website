@@ -3,6 +3,7 @@
 import { motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 export interface ServiceCardProps {
   title: string;
@@ -23,7 +24,13 @@ export default function ServiceCard({
   motionProps,
 }: ServiceCardProps) {
   return (
-    <div className={`${width} flex h-[570px] flex-col rounded-radius-10 border-r-1 border-white bg-white bg-opacity-[0.03] relative overflow-hidden`}>
+    <div
+      className={cn(
+        `${width} flex h-[570px] flex-col rounded-radius-10 border-r-1 border-white bg-white bg-opacity-[0.03] relative overflow-hidden`,
+        "max-lg:h-[350px]"
+        // "md:h-[300px]"
+      )}
+    >
       <motion.div
         className="absolute inset-[-10%] w-[120%] h-[120%] z-0"
         style={{
@@ -44,15 +51,40 @@ export default function ServiceCard({
         />
         <div className="absolute inset-0 bg-background/90 z-10"></div>
       </motion.div>
-      <div className="relative z-20 p-6 flex flex-col w-full h-full m-4 gap-2">
-        <div className="text-h3-medium">{title}</div>
-        <div className="text-body w-3/5">{description}</div>
+      <div
+        className={cn(
+          "relative z-20 p-6 flex flex-col w-full h-full m-4 gap-2",
+          "md:p-0"
+        )}
+      >
+        <div
+          className={cn(
+            "text-h3-medium",
+            "max-lg:text-body-large-medium",
+            // "md:text-normal-medium"
+          )}
+        >
+          {title}
+        </div>
+        <div
+          className={cn(
+            "text-body w-3/5",
+            // "lg:text-body-extra-small",
+            "max-lg:text-body-extra-small w-full"
+          )}
+        >
+          {description}
+        </div>
         <div className="flex items-center">
           <Button
             href="https://t.me/jw_corp"
             openInNewTab
             variant="link"
-            className="text-primary-light-2 p-0"
+            className={cn(
+              "text-primary-light-2 p-0",
+              // "lg:text-body-extra-small",
+              "max-lg:text-body-extra-small"
+            )}
           >
             Learn more
             <Image
@@ -66,4 +98,4 @@ export default function ServiceCard({
       </div>
     </div>
   );
-} 
+}

@@ -21,7 +21,7 @@ export const teamData: TeamMember[] = [
     title: "Full-Stack Smart Contract Developer",
     description:
       "Smartcontracts expert, building secure & scalable web3 applications on EVM & Solana chains",
-    imageUrl: "/assets/rami.jpg",
+    imageUrl: "/assets/matheo.png",
     socials: {
       linkedin: "https://linkedin.com/in/matheo",
       telegram: "https://t.me/JW_Matheo",
@@ -33,7 +33,7 @@ export const teamData: TeamMember[] = [
     name: "Rami",
     role: "Founder",
     title: "Fullstack Developer, Web3 Advisor",
-    credentials: "Ex Banking, university professor",
+    credentials: "Ex Banking, university professor, crypto investor since 2017",
     description: "Fullstack developer, web3 advisor",
     imageUrl: "/assets/rami.jpg",
     socials: {

@@ -119,10 +119,9 @@ export const caseStudiesData: CaseStudy[] = [
     technologies: [
       { id: "nextjs", name: "Next.js" },
       { id: "typescript", name: "TypeScript" },
-      { id: "chakra", name: "Chakra UI" },
+      { id: "chakra", name: "ChakraUI" },
       { id: "tailwind", name: "Tailwind" },
       { id: "solana", name: "Solana" },
-      { id: "solidity", name: "Solidity" },
     ],
   },
 ];
