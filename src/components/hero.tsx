@@ -5,7 +5,7 @@ import { Particles } from "./particles";
 function hero() {
   return (
     <>
-      <div className="w-full h-screen flex justify-center items-center relative">
+      <div className="w-full h-screen flex justify-center items-center relative" id="hero">
         <div
           className={cn(
             "absolute w-[100%] h-[100%]",

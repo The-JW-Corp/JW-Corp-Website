@@ -14,10 +14,9 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const links = [
-    { title: "Home", href: "#" },
-    { title: "Services", href: "#" },
-    { title: "Projects", href: "#" },
-    { title: "Contact", href: "#" },
+    { title: "Home", href: "#hero" },
+    { title: "Services", href: "#services" },
+    { title: "Projects", href: "#projects" },
   ];
 
   useEffect(() => {
@@ -93,6 +92,7 @@ function Navbar() {
           <div className={cn("flex gap-2", "max-md:hidden")}>
             <Button
               href="https://calendly.com/jw_corp/exploration"
+              openInNewTab
               className="max-lg:text-body-small max-lg:hidden"
               variant="primary"
             >
@@ -101,6 +101,7 @@ function Navbar() {
             <Button
               className="max-lg:text-body-small"
               href="https://t.me/jw_corp"
+              openInNewTab
               variant="secondary"
             >
               Chat on Telegram

@@ -97,7 +97,7 @@ function CaseStudies() {
       <Label className="max-md:text-body-extra-small" size="small">
         Case Studies
       </Label>
-      <div className="text-h2-medium max-md:text-body-large-medium">
+      <div className="text-h2-medium max-md:text-body-large-medium" id="projects">
         Built for Web3. Proven in Production.
       </div>
       <div className="text-body-normal-regular max-md:text-body-small">
