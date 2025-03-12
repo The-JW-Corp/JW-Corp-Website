@@ -42,12 +42,12 @@ function Navbar() {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
@@ -68,7 +68,7 @@ function Navbar() {
           <div className="pl-2">
             <Image src="/assets/jwcorp.png" alt="logo" width={80} height={80} />
           </div>
-          
+
           {/* Desktop Navigation */}
           <ul className={cn("flex gap-4", "max-md:hidden", "max-lg:gap-2")}>
             {links.map((link, index) => (
@@ -88,27 +88,37 @@ function Navbar() {
               </li>
             ))}
           </ul>
-          
+
           {/* Desktop Buttons */}
           <div className={cn("flex gap-2", "max-md:hidden")}>
-            <Button className="max-lg:text-body-small max-lg:hidden" href="#calendly" variant="primary">
+            <Button
+              href="https://calendly.com/jw_corp/exploration"
+              className="max-lg:text-body-small max-lg:hidden"
+              variant="primary"
+            >
               Book a call
             </Button>
-            <Button className="max-lg:text-body-small" href="https://t.me/jw_corp" variant="secondary">
+            <Button
+              className="max-lg:text-body-small"
+              href="https://t.me/jw_corp"
+              variant="secondary"
+            >
               Chat on Telegram
             </Button>
           </div>
-          
+
           {/* Hamburger Menu Button */}
           <div className="hidden max-md:block">
-            <button 
-              onClick={toggleMenu} 
+            <button
+              onClick={toggleMenu}
               className="flex flex-col justify-center items-center w-10 h-10 relative z-50"
               aria-label="Toggle menu"
             >
               <motion.span
                 className="w-6 h-0.5 bg-white rounded-full block mb-1.5"
-                animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3 }}
               />
               <motion.span
@@ -118,18 +128,20 @@ function Navbar() {
               />
               <motion.span
                 className="w-6 h-0.5 bg-white rounded-full block"
-                animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
+                }
                 transition={{ duration: 0.3 }}
               />
             </button>
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             className="fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center"
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
@@ -152,8 +164,8 @@ function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-col gap-4 w-64 mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -163,7 +175,11 @@ function Navbar() {
                 <Button href="#calendly" variant="primary" className="w-full">
                   Book a call
                 </Button>
-                <Button href="https://t.me/jw_corp" variant="secondary" className="w-full">
+                <Button
+                  href="https://t.me/jw_corp"
+                  variant="secondary"
+                  className="w-full"
+                >
                   Chat on Telegram
                 </Button>
               </motion.div>

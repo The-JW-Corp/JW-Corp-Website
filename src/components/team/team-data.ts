@@ -23,7 +23,7 @@ export const teamData: TeamMember[] = [
       "Smartcontracts expert, building secure & scalable web3 applications on EVM & Solana chains",
     imageUrl: "/assets/matheo.png",
     socials: {
-      linkedin: "https://linkedin.com/in/matheo",
+      linkedin: "https://www.linkedin.com/in/matheo-vallone/",
       telegram: "https://t.me/JW_Matheo",
       email: "matheo@jwcorp.fr",
     },
@@ -69,9 +69,8 @@ export const teamData: TeamMember[] = [
       "Senior Web3 engineer specialized in Ethereum technologies and advanced web development. Over 7 years of experience as Lead Developer/CTO and two Masters in Computer Science.",
     imageUrl: "/assets/remi.jpeg",
     socials: {
-      linkedin: "https://www.linkedin.com/in/baptiste-florentin/",
-      telegram: "https://t.me/Pybast",
-      email: "baptiste@jwcorp.fr",
+      linkedin: "https://www.linkedin.com/in/remi-blaise/",
+      email: "remi@jwcorp.fr",
     },
   },
   {
@@ -113,8 +112,8 @@ export const teamData: TeamMember[] = [
     imageUrl: "/assets/ismael.jpeg",
     socials: {
       linkedin: "https://linkedin.com/in/ismael-alaoui",
-      telegram: "https://t.me/ismael",
-      email: "",
+      telegram: "https://t.me/ismastg",
+      email: "ismael@jwcorp.fr",
     },
   },
   {
@@ -126,8 +125,8 @@ export const teamData: TeamMember[] = [
     description: "",
     imageUrl: "/assets/jean-charles.jpeg",
     socials: {
-      linkedin: "https://linkedin.com/in/elena",
-      telegram: "https://t.me/elena",
+      linkedin: "https://www.linkedin.com/in/jcgalli/",
+      telegram: "https://t.me/JC_tlgm",
       email: "",
     },
   },
