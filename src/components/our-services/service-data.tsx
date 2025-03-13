@@ -61,7 +61,7 @@ export const servicesData: ServiceDataItem[] = [
     description:
       "We design user-friendly, intuitive, and engaging interfaces that bring your vision to life.",
     width: "w-2/5",
-    imageUrl: "/elixir.jpg",
+    imageUrl: "/neonline.jpg",
   },
   {
     title: "Go-To-Market",
