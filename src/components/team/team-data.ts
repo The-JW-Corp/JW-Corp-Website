@@ -48,8 +48,8 @@ export const teamData: TeamMember[] = [
     id: "baptiste",
     name: "Baptiste",
     role: "",
-    title: "Blockchain engineer, audit",
-    credentials: "Ex CTO Nefture, Ex Curve Finance",
+    title: "Blockchain engineer and auditor",
+    credentials: "Ex CTO Nefture, Decentralization Academic at ESILV",
     description:
       "Full-stack architect specialized in EVM smart contracts and cross-chain solutions. Expert in Safe ecosystem, account abstraction, and Web3 backend development",
     imageUrl: "/assets/baptiste.jpeg",
