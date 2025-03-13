@@ -48,8 +48,9 @@ function Team() {
           return (
             <motion.div
               key={member.id}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              // TODO: Add animation later
+              initial={{ opacity: 1, y: 0 }}
+              // animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.15,
