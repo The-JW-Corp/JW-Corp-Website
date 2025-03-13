@@ -4,14 +4,14 @@ import { useState, useRef, useEffect } from "react";
 import Label from "../ui/label";
 import { cn } from "@/lib/utils";
 import { teamData } from "./team-data";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 function Team() {
   const [hoveredMemberId, setHoveredMemberId] = useState<string | null>(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  // const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
 
   useEffect(() => {
     setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
