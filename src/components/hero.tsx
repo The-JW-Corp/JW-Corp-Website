@@ -21,7 +21,7 @@ function hero() {
           <h1 className={cn("text-h1-medium", "max-md:text-h3-medium")}>We don’t just build. We ship.</h1>
           <p className={cn("text-body-medium", "max-md:text-body-small")}>
             We are crypto-native developers shaping the future of Web3. since
-            2017
+            2021
           </p>
           <div className="flex justify-center gap-4">
             <Button className="max-md:text-body-small max-md:px-4 max-md:py-[13px] max-md:h-fit" href="#calendly" size="lg" variant="primary">
