@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Drawer } from "../ui/drawer";
-import { usePathname } from "next/navigation";
 
 interface FooterProps {
   langageState?: boolean;
@@ -13,7 +12,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ langageState = false }) => {
   const year = new Date().getFullYear();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const pathname = usePathname();
 
   const handleDrawerOpenChange = (open: boolean) => {
     setIsDrawerOpen(open);
@@ -36,7 +34,7 @@ const Footer: React.FC<FooterProps> = ({ langageState = false }) => {
             <br />
             Tour CB21 - La Défense
             <br />
-            16 Place de l'iris
+            16 Place de l&apos;iris
             <br />
             92400 Courbevoie, France
             <br />
@@ -92,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({ langageState = false }) => {
             <div className="text-center space-y-2">
               <p className="text-sm leading-relaxed tracking-wide">
                 Tour CB21 - La Défense <br />
-                16 Place de l'iris <br />
+                16 Place de l&apos;iris <br />
                 92400 Courbevoie, France <br />
               </p>
               <Drawer
@@ -248,7 +246,7 @@ const Footer: React.FC<FooterProps> = ({ langageState = false }) => {
           <div className="text-center space-y-2">
             <p className="text-xs leading-relaxed tracking-wide">
               Tour CB21 - La Défense <br />
-              16 Place de l'iris <br />
+              16 Place de l&apos;iris <br />
               92400 Courbevoie, France <br />
             </p>
             <Drawer

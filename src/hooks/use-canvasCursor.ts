@@ -92,7 +92,7 @@ class Line {
 
   update(position: Position, envConfig: EnvConfig): void {
     let currentSpring = this.spring;
-    let firstNode = this.nodes[0];
+    const firstNode = this.nodes[0];
     
     firstNode.vx += (position.x - firstNode.x) * currentSpring;
     firstNode.vy += (position.y - firstNode.y) * currentSpring;
@@ -144,8 +144,7 @@ class Line {
 
 const useCanvasCursor = (): void => {
   let ctx: CanvasContext | null = null;
-  let sineGen: SineGenerator;
-  let pos: Position = { x: 0, y: 0 };
+  const pos: Position = { x: 0, y: 0 };
   let lines: Line[] = [];
   
   const E: EnvConfig = {
@@ -233,13 +232,6 @@ const useCanvasCursor = (): void => {
     ctx.running = true;
     ctx.frame = 1;
     
-    sineGen = new SineGenerator({
-      phase: Math.random() * 2 * Math.PI,
-      amplitude: 85,
-      frequency: 0.0015,
-      offset: 285,
-    });
-    
     document.addEventListener('mousemove', onMousemove as EventListener);
     document.addEventListener('touchstart', onMousemove as EventListener);
     document.body.addEventListener('orientationchange', resizeCanvas);
@@ -281,6 +273,7 @@ const useCanvasCursor = (): void => {
         if (ctx) ctx.running = true;
       });
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 
