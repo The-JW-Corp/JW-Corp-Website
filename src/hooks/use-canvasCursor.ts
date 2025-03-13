@@ -2,38 +2,39 @@
 
 import { useEffect } from 'react';
 
-interface NodeConfig {
-  phase?: number;
-  offset?: number;
-  frequency?: number;
-  amplitude?: number;
-}
+// Interface definitions supprimées ou commentées car plus utilisées
+// interface NodeConfig {
+//   phase?: number;
+//   offset?: number;
+//   frequency?: number;
+//   amplitude?: number;
+// }
 
-class SineGenerator {
-  phase: number;
-  offset: number;
-  frequency: number;
-  amplitude: number;
-  private valueCache: number;
+// class SineGenerator {
+//   phase: number;
+//   offset: number;
+//   frequency: number;
+//   amplitude: number;
+//   private valueCache: number;
 
-  constructor(config: NodeConfig = {}) {
-    this.phase = config.phase || 0;
-    this.offset = config.offset || 0;
-    this.frequency = config.frequency || 0.001;
-    this.amplitude = config.amplitude || 1;
-    this.valueCache = 0;
-  }
+//   constructor(config: NodeConfig = {}) {
+//     this.phase = config.phase || 0;
+//     this.offset = config.offset || 0;
+//     this.frequency = config.frequency || 0.001;
+//     this.amplitude = config.amplitude || 1;
+//     this.valueCache = 0;
+//   }
 
-  update(): number {
-    this.phase += this.frequency;
-    this.valueCache = this.offset + Math.sin(this.phase) * this.amplitude;
-    return this.valueCache;
-  }
+//   update(): number {
+//     this.phase += this.frequency;
+//     this.valueCache = this.offset + Math.sin(this.phase) * this.amplitude;
+//     return this.valueCache;
+//   }
 
-  value(): number {
-    return this.valueCache;
-  }
-}
+//   value(): number {
+//     return this.valueCache;
+//   }
+// }
 
 interface NodeType {
   x: number;
