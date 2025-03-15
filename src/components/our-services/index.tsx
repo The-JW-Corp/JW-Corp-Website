@@ -7,6 +7,7 @@ import ServiceCard from "./service-card";
 import { servicesData } from "./service-data";
 import Label from "../ui/label";
 import { cn } from "@/lib/utils";
+import AnimatedText from "../ui/animated-text";
 export default function OurServices() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -75,7 +76,9 @@ function ServiceHeader() {
         )}
         id="services"
       >
-        Building, Designing, and Scaling Web3 Products.
+        <AnimatedText animationType="reveal">
+          Building, Designing, and Scaling Web3 Products.
+        </AnimatedText>
       </div>
       <div
         className={cn(
@@ -83,8 +86,10 @@ function ServiceHeader() {
           "max-md:text-body-small"
         )}
       >
-        From full-stack development to high-level advisory and product design,
-        we ensure your project is built for long-term success.
+        <AnimatedText animationType="reveal" delay={0.3}>
+          From full-stack development to high-level advisory and product design,
+          we ensure your project is built for long-term success.
+        </AnimatedText>
       </div>
     </>
   );

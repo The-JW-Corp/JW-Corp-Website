@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 import AnimatedCursorWrapper from "@/components/animated-cursor-wrapper";
+import PageWrapper from "@/components/page-wrapper";
 
 const clashDisplay = localFont({
   src: "../../public/ClashDisplay-Regular.otf",
@@ -31,8 +32,10 @@ export default function RootLayout({
       <body
         className={`${clashDisplay.variable} ${geistMono.variable} antialiased font-sans`}
       >
-        <AnimatedCursorWrapper />
-        {children}
+        <PageWrapper>
+          <AnimatedCursorWrapper />
+          {children}
+        </PageWrapper>
       </body>
     </html>
   );

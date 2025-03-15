@@ -6,7 +6,7 @@ import Label from "../ui/label";
 import Image from "next/image";
 import { caseStudiesData } from "./case-studies-data";
 import { motion } from "framer-motion";
-
+import AnimatedText from "../ui/animated-text";
 function CaseStudies() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideWidth, setSlideWidth] = useState(46);
@@ -16,29 +16,29 @@ function CaseStudies() {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
   const touchStartXRef = useRef<number | null>(null);
   const touchEndXRef = useRef<number | null>(null);
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (!containerRef.current) return;
-      
+
       const containerWidth = containerRef.current.clientWidth;
-      
+
       const isMobileView = window.innerWidth < 768;
       setIsMobile(isMobileView);
-      
+
       if (isMobileView) {
         setSlideWidth(containerWidth);
       } else {
         setSlideWidth(window.innerWidth * 0.46);
       }
     };
-    
+
     handleResize();
-    
-    window.addEventListener('resize', handleResize);
-    
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -62,30 +62,24 @@ function CaseStudies() {
 
   const handleTouchEnd = () => {
     if (!touchStartXRef.current || !touchEndXRef.current) return;
-    
+
     const touchDiff = touchStartXRef.current - touchEndXRef.current;
-    const minSwipeDistance = 75; 
-    
+    const minSwipeDistance = 75;
+
     if (touchDiff > minSwipeDistance) {
-      
       nextCase();
     } else if (touchDiff < -minSwipeDistance) {
-      
       prevCase();
     }
-    
-    
+
     touchStartXRef.current = null;
     touchEndXRef.current = null;
   };
 
-  
   const getXPosition = () => {
     if (isMobile) {
-  
       return `calc(50% - (${currentIndex} * ${slideWidth}px) - (${slideWidth}px / 2))`;
     } else {
-      
       const gap = 2 * 16;
       const totalOffset = currentIndex * (slideWidth + gap);
       return `calc(50% - ${totalOffset}px - (${slideWidth}px / 2))`;
@@ -97,17 +91,24 @@ function CaseStudies() {
       <Label className="max-md:text-body-extra-small" size="small">
         Case Studies
       </Label>
-      <div className="text-h2-medium max-md:text-body-large-medium" id="projects">
-        Built for Web3. Proven in Production.
+      <div
+        className="text-h2-medium max-md:text-body-large-medium"
+        id="projects"
+      >
+        <AnimatedText animationType="reveal">
+          Built for Web3. Proven in Production.
+        </AnimatedText>
       </div>
       <div className="text-body-normal-regular max-md:text-body-small">
-        Every project we build solves a real problem in Web3—whether it&apos;s
-        scalability, security, or user adoption. Here are some of our most
-        impactful case studies.
+        <AnimatedText animationType="reveal" delay={0.3}>
+          Every project we build solves a real problem in Web3—whether it&apos;s
+          scalability, security, or user adoption. Here are some of our most
+          impactful case studies.
+        </AnimatedText>
       </div>
-      
+
       {/* Carousel container */}
-      <div 
+      <div
         ref={containerRef}
         className="relative w-full overflow-hidden px-4 py-8"
         onTouchStart={handleTouchStart}
@@ -115,10 +116,7 @@ function CaseStudies() {
         onTouchEnd={handleTouchEnd}
       >
         <motion.div
-          className={cn(
-            "flex", 
-            isMobile ? "gap-0" : "gap-8"
-          )}
+          className={cn("flex", isMobile ? "gap-0" : "gap-8")}
           initial={false}
           animate={{
             x: getXPosition(),
@@ -133,7 +131,9 @@ function CaseStudies() {
           {caseStudiesData.map((study, index) => (
             <motion.div
               key={study.id}
-              ref={(el) => { slideRefs.current[index] = el; }}
+              ref={(el) => {
+                slideRefs.current[index] = el;
+              }}
               animate={{
                 scale: index === currentIndex ? 1 : 0.9,
                 opacity: index === currentIndex ? 1 : 0.5,
@@ -167,7 +167,13 @@ function CaseStudies() {
                   height={120}
                 />
               </div>
-              <div className={cn("text-h2-medium", "max-lg:text-h3-medium", "max-md:text-body-large-medium")}>
+              <div
+                className={cn(
+                  "text-h2-medium",
+                  "max-lg:text-h3-medium",
+                  "max-md:text-body-large-medium"
+                )}
+              >
                 {study.title}
                 <p className="text-body-normal-regular">{study.subtitle}</p>
               </div>
